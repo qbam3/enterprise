@@ -9,7 +9,7 @@ connection.connect(Function(error){
     if(error){
         console.log(error);
     }else{
-        console.log('Connection to database!');
+        console.log('Connection to database!')
     }
 })
 module.exports=connection;
