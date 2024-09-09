@@ -3,7 +3,7 @@ let connection = mysql.createConnection({
     host: 'localhost',
     user: 'root',
     password: '',
-    database: 'database_enterprise'
+    database: ''
 })
 connection.connect(Function(error){
     if(error){
