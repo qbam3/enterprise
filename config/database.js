@@ -3,13 +3,13 @@ let connection = mysql.createConnection({
     host: 'localhost',
     user: 'root',
     password: '',
-    database: ''
+    database: 'db_ethol'
 })
-connection.connect(Function(error){
-    if(error){
-        console.log(error);
+connection.connect((error)=>{
+    if(!!error){
+        console.log(error)
     }else{
-        console.log('Connection to database!')
+        console.log('Terhubung Bosku')
     }
 })
 module.exports=connection;
