@@ -10,6 +10,9 @@ var session = require('express-session');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+var tugasRouter = require('./routes/tugas');
+var materiRouter = require('./routes/materi');
+var pengumumanRouter = require('./routes/pengumuman');
 
 var app = express();
 
@@ -25,6 +28,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/tugas', tugasRouter);
+app.use('/materi', materiRouter);
+app.use('/pengumuman', pengumumanRouter);
 
 app.use(session({
   cookie: {

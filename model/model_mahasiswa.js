@@ -1,6 +1,6 @@
 const connection = require('../config/database')
 
-class Model_Mahasiswa{
+class model_mahasiswa{
     static async getAll(){
         return new Promise((resolve, reject) => {
             connection.query("select * from mahasiswa order by id_mahasiswa desc", (err, rows)=>{
@@ -61,4 +61,4 @@ class Model_Mahasiswa{
     }
 }
 
-module.exports = Model_Mahasiswa;
+module.exports = model_mahasiswa;

@@ -1,6 +1,6 @@
 const connection = require('../config/database')
 
-class Model_User{
+class model_user{
     static async getAll(){
         return new Promise((resolve, reject) => {
             connection.query("select * from users order by id_users desc", (err, rows)=>{
@@ -72,4 +72,4 @@ class Model_User{
     }
 }
 
-module.exports = Model_User;
+module.exports = model_user;
