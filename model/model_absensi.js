@@ -1,9 +1,9 @@
 const connection = require('../config/database')
 
-class model_dosen{
+class model_absensi{
     static async getAll(){
         return new Promise((resolve, reject) => {
-            connection.query("select * from dosen order by id_dosen desc", (err, rows)=>{
+            connection.query("select * from absensi order by id_absensi desc", (err, rows)=>{
                 if(err){
                     reject(err)
                 }else{
@@ -14,7 +14,7 @@ class model_dosen{
     }
     static async store(Data){
         return new Promise((resolve, reject) => {
-            connection.query("insert into dosen set ?", Data, (err, rows)=>{
+            connection.query("insert into absensi set ?", Data, (err, rows)=>{
                 if(err){
                     reject(err)
                 }else{
@@ -23,21 +23,10 @@ class model_dosen{
             })
         })
     }
-    static async Login(username){
-        return new Promise((resolve, reject) => {
-            connection.query("select * from dosen where username = ?", username,(err, rows)=>{
-                if(err){
-                    reject(err)
-                }else{
-                    resolve(rows)
-                }
-            })
-        })
-    }
-
+   
     static async getId(id){
         return new Promise((resolve, reject) => {
-            connection.query('select * from dosen where id_user = ' + id, (err, rows)=>{
+            connection.query('select * from absensi where id_absensi = ' + id, (err, rows)=>{
                 if(err){
                     reject(err)
                 }else{
@@ -49,7 +38,7 @@ class model_dosen{
 
     static async Update(id ,Data){
         return new Promise((resolve, reject) => {
-            connection.query("update dosen set ? where id_user = ", + id, Data,(err, rows)=>{
+            connection.query("update absensi set ? where id_absensi = ", + id, Data,(err, rows)=>{
                 if(err){
                     reject(err)
                 }else{
@@ -61,7 +50,7 @@ class model_dosen{
 
     static async Delete(id){
         return new Promise((resolve, reject) => {
-            connection.query("delete from user where id_user = ", + id,(err, rows)=>{
+            connection.query("delete from absensi where id_absensi = ", + id,(err, rows)=>{
                 if(err){
                     reject(err)
                 }else{
@@ -72,4 +61,4 @@ class model_dosen{
     }
 }
 
-module.exports = model_dosen;
+module.exports = model_absensi;

@@ -47,7 +47,7 @@ router.post('/log', async (req, res)=>{
           let cek = await bcrypt.compare(password, enkripsi);
           
           if (cek) {
-              req.session.userId = data[0].id_user;
+              req.session.userId = data[0].id_users;
               req.flash('success', 'Berhasil login');
               res.redirect('/users');
           } else {
