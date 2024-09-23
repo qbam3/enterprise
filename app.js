@@ -5,7 +5,7 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
 
-var flash = require('express-flash');
+let flash = require('express-flash');
 var session = require('express-session');
 
 var indexRouter = require('./routes/index');
@@ -26,12 +26,6 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
-app.use('/tugas', tugasRouter);
-app.use('/materi', materiRouter);
-app.use('/pengumuman', pengumumanRouter);
-
 app.use(session({
   cookie: {
     maxAge: 600000000
@@ -43,6 +37,12 @@ app.use(session({
 }))
 
 app.use(flash())
+
+app.use('/', indexRouter);
+app.use('/users', usersRouter);
+app.use('/tugas', tugasRouter);
+app.use('/materi', materiRouter);
+app.use('/pengumuman', pengumumanRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
