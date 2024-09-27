@@ -28,7 +28,7 @@ router.get('/', async (req, res, next)=> {
     }
     
    }else{
-    res.send('Ada yang salah')
+    req.flash('Ada yang salah');
    }
 });
 
