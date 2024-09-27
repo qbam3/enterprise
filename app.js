@@ -4,7 +4,6 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
-
 let flash = require('express-flash');
 var session = require('express-session');
 
@@ -13,10 +12,11 @@ var usersRouter = require('./routes/users');
 var tugasRouter = require('./routes/tugas');
 var materiRouter = require('./routes/materi');
 var pengumumanRouter = require('./routes/pengumuman');
-var mahasiswaRouter = require('./routes/mahasiswa')
-var dosenRouter = require('./routes/dosen')
-var absensiRouter = require('./routes/absensi')
-var jadwalRouter = require('./routes/jadwal')
+var mahasiswaRouter = require('./routes/mahasiswa');
+var dosenRouter = require('./routes/dosen');
+var absensiRouter = require('./routes/absensi');
+var jadwalRouter = require('./routes/jadwal');
+var matakuliahRouter = require('./routes/matakuliah');  // dari temanmu
 
 var app = express();
 
@@ -40,7 +40,7 @@ app.use(session({
   secret: 'secret'
 }))
 
-app.use(flash())
+app.use(flash());
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
@@ -51,6 +51,7 @@ app.use('/mahasiswa', mahasiswaRouter);
 app.use('/dosen', dosenRouter);
 app.use('/absensi', absensiRouter);
 app.use('/jadwal', jadwalRouter);
+app.use('/matakuliah', matakuliahRouter);  // dari temanmu
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

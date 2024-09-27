@@ -5,6 +5,8 @@ var router = express.Router();
 router.get('/', function(req, res, next) {
   res.render('pengumuman/index');
 });
-
+router.get('/create', function(req, res, next) {
+  res.render('pengumuman/create');
+});
 
 module.exports = router;
