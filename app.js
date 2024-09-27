@@ -16,6 +16,7 @@ var pengumumanRouter = require('./routes/pengumuman');
 var mahasiswaRouter = require('./routes/mahasiswa')
 var dosenRouter = require('./routes/dosen')
 var absensiRouter = require('./routes/absensi')
+var jadwalRouter = require('./routes/jadwal')
 
 var app = express();
 
@@ -49,6 +50,7 @@ app.use('/pengumuman', pengumumanRouter);
 app.use('/mahasiswa', mahasiswaRouter);
 app.use('/dosen', dosenRouter);
 app.use('/absensi', absensiRouter);
+app.use('/jadwal', jadwalRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
