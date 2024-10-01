@@ -1,286 +1,221 @@
 <%- include('../partials/__head') %>
  
-    <!-- Start wrapper-->
-    <div id="wrapper">
-    
-    <!--Start sidebar-wrapper-->
+<!-- Start wrapper-->
+<div id="wrapper">
     <div id="sidebar-wrapper" data-simplebar="" data-simplebar-auto-hide="true">
         <div class="brand-logo">
-        <a href="index.html">
-        <img src="dashtreme/assets/images/logo-icon.png" class="logo-icon" alt="logo icon">
-        <h5 class="logo-text">Dashtreme Admin</h5>
-        </a>
-    </div>
-    <ul class="sidebar-menu do-nicescrol">
-        <li class="sidebar-header">MAIN NAVIGATION</li>
-        <li>
             <a href="index.html">
-            <i class="zmdi zmdi-view-dashboard"></i> <span>Dashboard</span>
+            <img src="/dashtreme/assets/images/logo-icon.png" class="logo-icon" alt="logo icon">
+            <h5 class="logo-text">Dashtreme Admin</h5>
             </a>
-        </li>
+        </div>
+        <ul class="sidebar-menu do-nicescrol">
+            <li class="sidebar-header">MAIN NAVIGATION</li>
+            <li>
+                <a href="/users">
+                <i class="zmdi zmdi-view-dashboard"></i> <span>Dashboard</span>
+                </a>
+            </li>
 
-        <li>
-            <a href="icons.html">
-            <i class="zmdi zmdi-invert-colors"></i> <span>Materi</span>
-            </a>
-        </li>
+            <li>
+                <a href="/matakuliah">
+                <i class="zmdi zmdi-invert-colors"></i> <span>Matakuliah</span>
+                </a>
+            </li>
 
-        <li>
-            <a href="forms.html">
-            <i class="zmdi zmdi-format-list-bulleted"></i> <span>Tugas</span>
-            </a>
-        </li>
-
-        <li>
-            <a href="tables.html">
-            <i class="zmdi zmdi-grid"></i> <span>Pengumuman</span>
-            </a>
-        </li>
-
-        
-
+            <li>
+                <a href="/">
+                <i class="zmdi zmdi-format-list-bulleted"></i> <span>Jadwal</span>
+                </a>
+            </li>
         </ul>
-    
     </div>
     <!--End sidebar-wrapper-->
 
     <!--Start topbar header-->
     <header class="topbar-nav">
-    <nav class="navbar navbar-expand fixed-top">
-    <ul class="navbar-nav mr-auto align-items-center">
-        <li class="nav-item">
-        <a class="nav-link toggle-menu" href="javascript:void();">
-        <i class="icon-menu menu-icon"></i>
-        </a>
-        </li>
-        <li class="nav-item">
-        <form class="search-bar">
-            <input type="text" class="form-control" placeholder="Enter keywords">
-            <a href="javascript:void();"><i class="icon-magnifier"></i></a>
-        </form>
-        </li>
-    </ul>
-        
-    <ul class="navbar-nav align-items-center right-nav-link">
-        <li class="nav-item dropdown-lg">
-        <a class="nav-link dropdown-toggle dropdown-toggle-nocaret waves-effect" data-toggle="dropdown" href="javascript:void();">
-        <i class="fa fa-envelope-open-o"></i></a>
-        </li>
-        <li class="nav-item dropdown-lg">
-        <a class="nav-link dropdown-toggle dropdown-toggle-nocaret waves-effect" data-toggle="dropdown" href="javascript:void();">
-        <i class="fa fa-bell-o"></i></a>
-        </li>
-        <li class="nav-item language">
-        <a class="nav-link dropdown-toggle dropdown-toggle-nocaret waves-effect" data-toggle="dropdown" href="javascript:void();"><i class="fa fa-flag"></i></a>
-        <ul class="dropdown-menu dropdown-menu-right">
-            <li class="dropdown-item"> <i class="flag-icon flag-icon-gb mr-2"></i> English</li>
-            <li class="dropdown-item"> <i class="flag-icon flag-icon-fr mr-2"></i> French</li>
-            <li class="dropdown-item"> <i class="flag-icon flag-icon-cn mr-2"></i> Chinese</li>
-            <li class="dropdown-item"> <i class="flag-icon flag-icon-de mr-2"></i> German</li>
+        <nav class="navbar navbar-expand fixed-top">
+            <ul class="navbar-nav mr-auto align-items-center">
+                <li class="nav-item">
+                    <a class="nav-link toggle-menu" href="javascript:void();">
+                        <i class="icon-menu menu-icon"></i>
+                    </a>
+                </li>
+                <li class="nav-item">
+                <form class="search-bar">
+                    <input type="text" class="form-control" placeholder="Enter keywords">
+                    <a href="javascript:void();"><i class="icon-magnifier"></i></a>
+                </form>
+                </li>
+            </ul> 
+            <ul class="navbar-nav align-items-center right-nav-link">
+                <li class="nav-item dropdown-lg">
+                    <a class="nav-link dropdown-toggle dropdown-toggle-nocaret waves-effect" data-toggle="dropdown" href="javascript:void();">
+                    <i class="fa fa-envelope-open-o"></i></a>
+                </li>
+                <li class="nav-item dropdown-lg">
+                    <a class="nav-link dropdown-toggle dropdown-toggle-nocaret waves-effect" data-toggle="dropdown" href="javascript:void();">
+                    <i class="fa fa-bell-o"></i></a>
+                </li>
+                <li class="nav-item language">
+                    <a class="nav-link dropdown-toggle dropdown-toggle-nocaret waves-effect" data-toggle="dropdown" href="javascript:void();"><i class="fa fa-flag"></i></a>
+                    <ul class="dropdown-menu dropdown-menu-right">
+                        <li class="dropdown-item"> <i class="flag-icon flag-icon-gb mr-2"></i> English</li>
+                        <li class="dropdown-item"> <i class="flag-icon flag-icon-fr mr-2"></i> French</li>
+                        <li class="dropdown-item"> <i class="flag-icon flag-icon-cn mr-2"></i> Chinese</li>
+                        <li class="dropdown-item"> <i class="flag-icon flag-icon-de mr-2"></i> German</li>
+                        </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link dropdown-toggle dropdown-toggle-nocaret" data-toggle="dropdown" href="#">
+                        <span class="user-profile"><img src="https://via.placeholder.com/110x110" class="img-circle" alt="user avatar"></span>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-right">
+                        <li class="dropdown-item user-details">
+                            <a href="javaScript:void();">
+                                <div class="media">
+                                    <div class="avatar"><img class="align-self-start mr-3" src="https://via.placeholder.com/110x110" alt="user avatar"></div>
+                                    <div class="media-body">
+                                    <h6 class="mt-2 user-title">Sarajhon Mccoy</h6>
+                                    <p class="user-subtitle">mccoy@example.com</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="dropdown-divider"></li>
+                        <li class="dropdown-item"><i class="icon-envelope mr-2"></i> Inbox</li>
+                        <li class="dropdown-divider"></li>
+                        <li class="dropdown-item"><i class="icon-wallet mr-2"></i> Account</li>
+                        <li class="dropdown-divider"></li>
+                        <li class="dropdown-item"><i class="icon-settings mr-2"></i> Setting</li>
+                        <li class="dropdown-divider"></li>
+                        <li class="dropdown-item"><i class="icon-power mr-2"></i> Logout</li>
+                    </ul>
+                </li>
             </ul>
-        </li>
-        <li class="nav-item">
-        <a class="nav-link dropdown-toggle dropdown-toggle-nocaret" data-toggle="dropdown" href="#">
-            <span class="user-profile"><img src="https://via.placeholder.com/110x110" class="img-circle" alt="user avatar"></span>
-        </a>
-        <ul class="dropdown-menu dropdown-menu-right">
-        <li class="dropdown-item user-details">
-            <a href="javaScript:void();">
-            <div class="media">
-                <div class="avatar"><img class="align-self-start mr-3" src="https://via.placeholder.com/110x110" alt="user avatar"></div>
-                <div class="media-body">
-                <h6 class="mt-2 user-title">Sarajhon Mccoy</h6>
-                <p class="user-subtitle">mccoy@example.com</p>
-                </div>
-            </div>
-            </a>
-            </li>
-            <li class="dropdown-divider"></li>
-            <li class="dropdown-item"><i class="icon-envelope mr-2"></i> Inbox</li>
-            <li class="dropdown-divider"></li>
-            <li class="dropdown-item"><i class="icon-wallet mr-2"></i> Account</li>
-            <li class="dropdown-divider"></li>
-            <li class="dropdown-item"><i class="icon-settings mr-2"></i> Setting</li>
-            <li class="dropdown-divider"></li>
-            <li class="dropdown-item"><i class="icon-power mr-2"></i> Logout</li>
-        </ul>
-        </li>
-    </ul>
-    </nav>
+        </nav>
     </header>
     <!--End topbar header-->
 
     <div class="clearfix"></div>
-        
     <div class="content-wrapper">
         <div class="container-fluid">
 
-    <!--Start Dashboard Content-->
-
-        <div class="card mt-3">
-            <div class="card-content">
-                <div class="row row-group m-0">
-                    <div class="col-12 col-lg-6 col-xl-3 border-light">
-                        <div class="card-body">
-                        <h5 class="text-white mb-0">Mahasiswa <span class="float-right"><i class="fa fa-user -cart"></i></span></h5>
-                        <p class="mb-0 text-white small-font">Ibram</span></p>
-                        </div>
-                    </div>
-
-                    <!-- Content Row -->
-                    <div class="row">
-
-                        <!-- Earnings (Monthly) Card Example -->
-                        <div class="col-xl-3 col-md-6 mb-4">
-                            <div class="card border-left-primary shadow h-100 py-2">
-                                <div class="card-body">
-                                    <div class="row no-gutters align-items-center">
-                                        <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                                Wali Kelas</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">Joko Prasetyo</div>
-                                        </div>
-                                        <div class="col-auto">
-                                            <i class="fas fa-user fa-2x text-gray-300"></i>
-                                        </div>
-                                    </div>
-                                </div>
+            <!--Start Dashboard Content-->
+            <div class="card mt-3">
+                <div class="card-content">
+                    <div class="row row-group m-0">
+                        <div class="col-12 col-lg-6 col-xl-3 border-light">
+                            <div class="card-body">
+                                <h5 class="text-white mb-0">9526 <span class="float-right"><i class="fa fa-shopping-cart"></i></span></h5>  
+                                <p class="mb-0 text-white small-font">Total Orders </p>
                             </div>
                         </div>
-
-                        <!-- Earnings (Monthly) Card Example -->
-                        <div class="col-xl-3 col-md-6 mb-4">
-                            <div class="card border-left-success shadow h-100 py-2">
-                                <div class="card-body">
-                                    <div class="row no-gutters align-items-center">
-                                        <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
-                                                Status</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">Mahasiswa</div>
-                                        </div>
-                                        <div class="col-auto">
-                                            <i class="fas fa-angle-up -sign fa-2x text-gray-300"></i>
-                                        </div>
-                                    </div>
-                                </div>
+                        <div class="col-12 col-lg-6 col-xl-3 border-light">
+                            <div class="card-body">
+                                <h5 class="text-white mb-0">8323 <span class="float-right"><i class="fa fa-usd"></i></span></h5>   
+                                <p class="mb-0 text-white small-font">Total Revenue </p>
                             </div>
                         </div>
-
-                        <!-- Earnings (Monthly) Card Example -->
-                        <div class="col-xl-3 col-md-6 mb-4">
-                            <div class="card border-left-info shadow h-100 py-2">
-                                <div class="card-body">
-                                    <div class="row no-gutters align-items-center">
-                                        <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Jumlah Matakuliah
-                                            </div>
-                                            <div class="row no-gutters align-items-center">
-                                                <div class="col-auto">
-                                                    <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">10</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-auto">
-                                            <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
-                                        </div>
-                                    </div>
-                                </div>
+                        <div class="col-12 col-lg-6 col-xl-3 border-light">
+                            <div class="card-body">
+                                <h5 class="text-white mb-0">6200 <span class="float-right"><i class="fa fa-eye"></i></span></h5>
+                                <p class="mb-0 text-white small-font">Visitors</p>
                             </div>
                         </div>
-
-                        <!-- Pending Requests Card Example -->
-                        <div class="col-xl-3 col-md-6 mb-4">
-                            <div class="card border-left-warning shadow h-100 py-2">
-                                <div class="card-body">
-                                    <div class="row no-gutters align-items-center">
-                                        <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
-                                                Catatan</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">-</div>
-                                        </div>
-                                        <div class="col-auto">
-                                            <i class="fas fa-ellipsis-v fa-2x text-gray-300"></i>
-                                        </div>
-                                    </div>
-                                </div>
+                        <div class="col-12 col-lg-6 col-xl-3 border-light">
+                            <div class="card-body">
+                                <h5 class="text-white mb-0">5630 <span class="float-right"><i class="fa fa-solid fa-door"></i></span></h5>   
+                                <p class="mb-0 text-white small-font">Messages</p>
                             </div>
                         </div>
-                    <div class="table-responsive">
-                        <table class="table align-items-center table-flush table-borderless table-hover">
-                            <thead>
-                            <tr>
-                                <th>Nama Matakuliah</th>
-                                <th>Dosen</th>
-                                <th>Jadwal</th>
-                                <th>Ruangan</th>
-                                <th>Selengkapnya</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>Basis Data Lanjut</td>
-                                    <td>Lusiana Agustien</td>
-                                    <td>Selasa, 08.00-09.40</td>
-                                    <td>K-102</td>
-                                    <td><a href="/detail" class="btn btn-primary">Akses Kuliah</a</td>
-                                </tr>
-                                <tr>
-                                    <td>Praktek Basis Data Lanjut</td>
-                                    <td>Lusiana Agustien</td>
-                                    <td>Rabu, 13.00-14.40</td>
-                                    <td>Lab-204</td>
-                                    <td><a href="/detail" class="btn btn-primary">Akses Kuliah</a</td>
-                                </tr>
-                                <tr>
-                                    <td>Konsep Jaringan</td>
-                                    <td>Joko Prasetyo</td>
-                                    <td>Senin, 10.30-12.10</td>
-                                    <td>K-101</td>
-                                    <td><a href="/detail" class="btn btn-primary">Akses Kuliah</a</td>
-                                </tr>
-                                <tr>
-                                    <td>Praktek Konsep Jaringan</td>
-                                    <td>Joko Prasetyo</td>
-                                    <td>Kamis, 10.30-12.10</td>
-                                    <td>Lab-203</td>
-                                    <td><a href="/detail" class="btn btn-primary">Akses Kuliah</a</td>
-                                </tr>
-                                <tr>
-                                    <td>Workshop pemrograman aplikasi berbasis web</td>
-                                    <td>Khoironi</td>
-                                    <td>Senin, 13.00-14.30</td>
-                                    <td>Lab-203</td>
-                                    <td><a href="/detail" class="btn btn-primary">Akses Kuliah</a</td>
-                                </tr>
-                                <tr>
-                                    <td>Metodologi Agile</td>
-                                    <td>Adam Shidqul Aziz</td>
-                                    <td>Rabu, 08.00-09.40</td>
-                                    <td>Lab-203</td>
-                                    <td><a href="/detail" class="btn btn-primary">Akses Kuliah</a</td>
-                                </tr>
-
-                            </tbody>
-                        </table>
                     </div>
                 </div>
-            </div>
-        </div>
-        <!--End Row-->
+            </div>  
+            <div class="row">
+                <div class="col-12 col-lg-12">
+                    <div class="card">
+                        <div class="card-header">INFORMASI
+                        <div class="card-action">
+                            <div class="dropdown">
+                            <a href="javascript:void();" class="dropdown-toggle dropdown-toggle-nocaret" data-toggle="dropdown">
+                            <i class="icon-options"></i>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right">
+                            <a class="dropdown-item" href="javascript:void();">Action</a>
+                            <a class="dropdown-item" href="javascript:void();">Another action</a>
+                            <a class="dropdown-item" href="javascript:void();">Something else here</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="javascript:void();">Separated link</a>
+                            </div>
+                            </div>
+                            </div>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="table align-items-center table-flush table-borderless">
+                                <thead> 
+                                    <tr>
+                                        <th>Matakuliah</th>
+                                        <th>Dosen</th>
+                                        <th>Jadwal</th>
+                                        <th>Ruangan</th>
+                                        <th>Selengkapnya</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Algoritma dan Pemrograman</td>
+                                        <td>Dr. Budi</td>
+                                        <td>Senin, 08:00-10:00</td>
+                                        <td>Lab Komputer 1</td>
+                                        <td><a href="/matakuliah/detail" class="btn btn-primary">Lanjut</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Sistem Basis Data</td>
+                                        <td>Dr. Siti</td>
+                                        <td>Rabu, 10:00-12:00</td>
+                                        <td>Ruang 203</td>
+                                        <td><a href="/matakuliah/detail" class="btn btn-primary">Lanjut</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Struktur Data</td>
+                                        <td>Dr. Hasan</td>
+                                        <td>Kamis, 13:00-15:00</td>
+                                        <td>Lab Komputer 2</td>
+                                        <td><a href="/matakuliah/detail" class="btn btn-primary">Lanjut</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Jaringan Komputer</td>
+                                        <td>Dr. Amin</td>
+                                        <td>Selasa, 09:00-11:00</td>
+                                        <td>Ruang 305</td>
+                                        <td><a href="/matakuliah/detail" class="btn btn-primary">Lanjut</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Metodologi Agile</td>
+                                        <td>Pak Adam</td>
+                                        <td>Jumat, 08:00-10:00</td>
+                                        <td>Ruang 102</td>
+                                        <td><a href="/matakuliah/detail" class="btn btn-primary">Lanjut</a></td>
+                                    </tr>
+                                </tbody>                                    
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div><!--End Row-->
 
-        <!--End Dashboard Content-->
-        
-        <!--start overlay-->
+            <!--End Dashboard Content-->
+	  
+            <!--start overlay-->
             <div class="overlay toggle-menu"></div>
             <!--end overlay-->
-            
+		
         </div>
         <!-- End container-fluid-->
-        
-        </div><!--End content-wrapper-->
-    <!--Start Back To Top Button-->
-        <a href="javaScript:void();" class="back-to-top"><i class="fa fa-angle-double-up"></i> </a>
-        <!--End Back To Top Button-->
-
-<%- include('../partials/__foot') %>
+    </div><!--End content-wrapper-->
+   <!--Start Back To Top Button-->
+    <a href="javaScript:void();" class="back-to-top"><i class="fa fa-angle-double-up"></i> </a>
+    <!--End Back To Top Button-->
 	
+<%- include('../partials/__foot') %>
