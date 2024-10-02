@@ -54,6 +54,9 @@ router.post('/log', async (req, res)=>{
               req.flash('error', 'Password atau email salah');
               res.redirect('/login');
           }
+      }else{
+        req.flash('error', 'akun tidak ada')
+        res.redirect('/login')
       }
   } catch (err) {
     req.flash('error', 'Terjadi kesalahan. Silakan coba lagi.');
