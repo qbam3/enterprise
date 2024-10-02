@@ -1,21 +1,25 @@
-body {
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+body, html {
+  height: 100%;
+  margin: 0; /* Hilangkan margin untuk memastikan 100% tinggi */
 }
 
-a {
-  color: #00B7FF;
-}
-.sidebar-brand-text {
-  text-transform: uppercase;
-}
-
-.sidebar-brand-text span {
-  text-transform: lowercase;
-}
-.sidebar {
-  display: block; /* Tampilkan sidebar */
+#wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Pastikan wrapper memenuhi seluruh viewport */
 }
 
-.sidebar.hidden {
-  display: none; /* Sembunyikan sidebar */
+.content-wrapper {
+  flex-grow: 1; /* Membuat konten meluas dan menyesuaikan ruang yang ada */
+}
+
+footer {
+  background-color: #333; /* Warna latar footer */
+  color: white; /* Warna teks footer */
+  text-align: center; /* Penataan teks di tengah */
+  padding: 10px;
+  width: 100%;
+  position: relative; /* Pastikan footer tidak mengganggu konten */
+  bottom: 0;
+  height: 50px; /* Tinggi footer */
 }
