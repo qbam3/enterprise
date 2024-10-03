@@ -1,6 +1,7 @@
 body, html {
   height: 100%;
   margin: 0; /* Hilangkan margin untuk memastikan 100% tinggi */
+  overflow-x: hidden; /* Cegah horizontal scrolling */
 }
 
 #wrapper {
@@ -22,4 +23,9 @@ footer {
   position: relative; /* Pastikan footer tidak mengganggu konten */
   bottom: 0;
   height: 50px; /* Tinggi footer */
+}
+
+/* Tambahan untuk elemen yang mungkin melampaui lebar viewport */
+* {
+  box-sizing: border-box; /* Pastikan padding dan border dihitung dalam ukuran elemen */
 }
