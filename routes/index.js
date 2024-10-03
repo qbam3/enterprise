@@ -13,7 +13,7 @@ router.get('/register', function(req, res, next){
   res.render('auth/register')
 })
 
-router.get('/admin', (req, res, next)=> {
+router.get('/admin_log', (req, res, next)=> {
   res.render('auth/admin')
 });
 
@@ -54,6 +54,9 @@ router.post('/log', async (req, res)=>{
               req.flash('error', 'Password atau email salah');
               res.redirect('/login');
           }
+      }else{
+        req.flash('error', 'akun tidak ada')
+        res.redirect('/login')
       }
   } catch (err) {
     req.flash('error', 'Terjadi kesalahan. Silakan coba lagi.');
