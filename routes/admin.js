@@ -10,7 +10,7 @@ var model_users = require('../model/model_users')
 
 router.get('/', async (req, res, next)=>{
     let rows = await model_users.getAll()
-    res.render('dosen/index',{
+    res.render('admin/index',{
         data : rows,
         username: Data[0].username
     })

@@ -17,13 +17,30 @@ router.get('/', isAuthenticated, async (req, res, next)=>{
         Username: Data[0].username
     })
 })
-router.get('/matakuliah', function(req, res, next) {
-    res.render('matakuliah/index');
-  });
 
-  router.get('/matakuliah/detail', function(req, res, next) {
-    res.render('matakuliah/detail');
-  });
+router.get('/matakuliah', function(req, res, next) {
+    res.render('users/matakuliah');
+});
+
+router.get('/matakuliah/detail', function(req, res, next) {
+  res.render('users/detail');
+});
+
+router.get('/jadwal', function(req, res, next) {
+  res.render('users/jadwal');
+});
+
+router.get('/pengumuman', function(req, res, next) {
+  res.render('users/pengumuman');
+});
+
+router.get('/materi', function(req, res, next) {
+  res.render('users/materi');
+});
+
+router.get('/tugas', function(req, res, next) {
+  res.render('users/tugas');
+});
 
 router.get('/absensi', async (req, res, next)=>{
     await model_absensi.getAll();

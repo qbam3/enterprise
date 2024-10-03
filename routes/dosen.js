@@ -12,12 +12,40 @@ router.get('/', async (req, res, next)=>{
 })
 
 router.get('/matakuliah', function(req, res, next) {
-    res.render('matakuliah/index');
-  });
+    res.render('dosen/matakuliah');
+});
 
-  router.get('/matakuliah/detail', function(req, res, next) {
-    res.render('matakuliah/detail');
-  });
+router.get('/matakuliah/detail', function(req, res, next) {
+    res.render('dosen/detail');
+});
+
+router.get('/jadwal', function(req, res, next) {
+    res.render('dosen/jadwal');
+});
+
+router.get('/materi', function(req, res, next) {
+    res.render('materi/index');
+});
+
+router.get('/materi', function(req, res, next) {
+    res.render('materi/create');
+});
+
+router.get('/pengumuman', function(req, res, next) {
+    res.render('pengumuman/index');
+});
+
+router.get('/pengumuman', function(req, res, next) {
+    res.render('pengumuman/create');
+});
+
+router.get('/tugas', function(req, res, next) {
+    res.render('tugas/index');
+});
+
+router.get('/tugas', function(req, res, next) {
+    res.render('tugas/create');
+});
 
 router.get('/absensi', async (req, res, next)=>{
     await model_absensi.getAll();
