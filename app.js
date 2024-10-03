@@ -16,7 +16,6 @@ var mahasiswaRouter = require('./routes/mahasiswa');
 var dosenRouter = require('./routes/dosen');
 var absensiRouter = require('./routes/absensi');
 var jadwalRouter = require('./routes/jadwal');
-var matakuliahRouter = require('./routes/matakuliah'); 
 var adminRouter = require('./routes/admin'); 
 
 
@@ -51,9 +50,8 @@ app.use('/materi', materiRouter);
 app.use('/pengumuman', pengumumanRouter);
 app.use('/mahasiswa', mahasiswaRouter);
 app.use('/dosen', dosenRouter);
-app.use('/absensi', absensiRouter);
+// app.use('/absensi', absensiRouter);
 app.use('/jadwal', jadwalRouter);
-app.use('/matakuliah', matakuliahRouter);  // dari temanmu
 app.use('/admin', adminRouter);  // dari temanmu
 
 // catch 404 and forward to error handler

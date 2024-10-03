@@ -13,7 +13,7 @@ router.get('/register', function(req, res, next){
   res.render('auth/register')
 })
 
-router.get('/admin', (req, res, next)=> {
+router.get('/admin_log', (req, res, next)=> {
   res.render('auth/admin')
 });
 

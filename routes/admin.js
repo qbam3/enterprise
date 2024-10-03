@@ -5,7 +5,16 @@ var model_prodi = require('../model/model_prodi')
 var model_kelas = require('../model/model_kelas')
 var model_matakuliah = require('../model/model_matakuliah')
 var model_jadwal = require('../model/model_jadwal')
+var model_users = require('../model/model_users')
 
+
+router.get('/', async (req, res, next)=>{
+    let rows = await model_users.getAll()
+    res.render('dosen/index',{
+        data : rows,
+        username: Data[0].username
+    })
+})
 
 router.get('/create/semester', async (req, res, next)=>{
     let rows = await model_semester.getAll()
@@ -73,7 +82,7 @@ router.get('/create/jadwal', async (req, res, next)=>{
 router.post('/post/jadwal', async ()=>{
     let {jadwal_kuliah, id_matakuliah, id_dosen, id_kelas} = req.body
     let Data = {jadwal_kuliah, id_matakuliah, id_dosen, id_kelas}
-    await model_matakuliah.store(Data)
+    await model_jadwal.store(Data)
     req.flash('success', 'berhasil memasukan data')
 })
 

@@ -14,21 +14,15 @@ router.get('/', async (req, res, next)=> {
 
    if(Data.length > 0){
     if(Data[0].role === '3'){
-        res.render('users/index', {
-            username: Data[0].username
-        })
+        res.redirect('/mahasiswa')
     }
 
     if(Data[0].role === '2'){
-        res.render('dosen/index', {
-            username: Data[0].username
-        })
+        res.redirect('/dosen')
     }
 
     if(Data[0].role === '1'){
-        res.render('admin/index', {
-            username: Data[0].username
-        })
+        res.redirect('/admin')
     } 
    }
 });
