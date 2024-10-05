@@ -5,7 +5,8 @@
     <div id="sidebar-wrapper" data-simplebar="" data-simplebar-auto-hide="true">
         <div class="brand-logo">
             <a href="/users">
-            <img src="/dashtreme/assets/images/logo-icon.png" class="logo-icon" alt="logo icon">
+                <img src="/images/Logo_PENS.png" class="logo-icon img-fluid" alt="logo icon" style="width: 50px; height: 50;">
+
             <h5 class="logo-text">E-DITI</h5>
             </a>
         </div>
@@ -19,15 +20,16 @@
 
             <li>
                 <a href="/dosen/matakuliah">
-                <i class="zmdi zmdi-invert-colors"></i> <span>Matakuliah</span>
+                    <i class="zmdi zmdi-library"></i><span>Matakuliah</span>
                 </a>
             </li>
 
             <li>
                 <a href="/dosen/jadwal">
-                <i class="zmdi zmdi-format-list-bulleted"></i> <span>Jadwal</span>
+                    <i class="fa-regular fa-calendar"></i> <span>Jadwal</span>
                 </a>
             </li>
+
             <li class="sidebar-header">SUB-NAVIGATION</li>
             <li><a href="/logout"><i class="fas fa-home"></i><span>Logout</span></a></li>
         </ul>
@@ -51,7 +53,7 @@
                 </li>
             </ul> 
             <ul class="navbar-nav align-items-center right-nav-link">
-                <li class="nav-item dropdown-lg">
+                <!-- <li class="nav-item dropdown-lg">
                     <a class="nav-link dropdown-toggle dropdown-toggle-nocaret waves-effect" data-toggle="dropdown" href="javascript:void();">
                     <i class="fa fa-envelope-open-o"></i></a>
                 </li>
@@ -67,16 +69,16 @@
                         <li class="dropdown-item"> <i class="flag-icon flag-icon-cn mr-2"></i> Chinese</li>
                         <li class="dropdown-item"> <i class="flag-icon flag-icon-de mr-2"></i> German</li>
                         </ul>
-                </li>
+                </li> -->
                 <li class="nav-item">
                     <a class="nav-link dropdown-toggle dropdown-toggle-nocaret" data-toggle="dropdown" href="#">
-                        <span class="user-profile"><img src="https://via.placeholder.com/110x110" class="img-circle" alt="user avatar"></span>
+                        <span class="user-profile"><img src="/images/Logo_PENS.png" class="img-circle" alt="user avatar"></span>
                     </a>
                     <ul class="dropdown-menu dropdown-menu-right">
                         <li class="dropdown-item user-details">
                             <a href="javaScript:void();">
                                 <div class="media">
-                                    <div class="avatar"><img class="align-self-start mr-3" src="https://via.placeholder.com/110x110" alt="user avatar"></div>
+                                    <div class="avatar"><img class="align-self-start mr-3" src="/images/Logo_PENS.png" alt="user avatar"></div>
                                     <div class="media-body">
                                     <h6 class="mt-2 user-title"><%= Username %></h6>
                                     <p class="user-subtitle"><%= Email %></p>
@@ -85,7 +87,7 @@
                             </a>
                         </li>
                         <li class="dropdown-divider"></li>
-                        <li class="dropdown-item"><a href="/dosen/profile"><i class="icon-user mr-2"></i> Profile</a></li>
+                        <!-- <li class="dropdown-item"><a href="/dosen/profile"><i class="icon-user mr-2"></i> Profile</a></li> -->
                         <li class="dropdown-item"><a href="/logout"><i class="fas fa-home mr-2"></i>Logout</a></li>
                     </ul>
                 </li>
@@ -104,26 +106,26 @@
                     <div class="row row-group m-0">
                         <div class="col-12 col-lg-6 col-xl-3 border-light">
                             <div class="card-body">
-                                <h5 class="text-white mb-0">9526 <span class="float-right"><i class="fa fa-shopping-cart"></i></span></h5>  
-                                <p class="mb-0 text-white small-font">Total Orders </p>
+                                <h5 class="text-white mb-0">Jumlah Dosen <span class="float-right"><i class="fa-solid fa-person"></i></span></h5>  
+                                <p class="mb-0 text-white small-font">20 </p>
                             </div>
                         </div>
                         <div class="col-12 col-lg-6 col-xl-3 border-light">
                             <div class="card-body">
-                                <h5 class="text-white mb-0">8323 <span class="float-right"><i class="fa fa-usd"></i></span></h5>   
-                                <p class="mb-0 text-white small-font">Total Revenue </p>
+                                <h5 class="text-white mb-0">Jumlah Mahasiswa <span class="float-right"><i class="fa-solid fa-users"></i></span></h5>   
+                                <p class="mb-0 text-white small-font">400 </p>
                             </div>
                         </div>
                         <div class="col-12 col-lg-6 col-xl-3 border-light">
                             <div class="card-body">
-                                <h5 class="text-white mb-0">6200 <span class="float-right"><i class="fa fa-eye"></i></span></h5>
-                                <p class="mb-0 text-white small-font">Visitors</p>
+                                <h5 class="text-white mb-0">Jumlah Prodi <span class="float-right"><i class="fa-solid fa-graduation-cap"></i></span></h5>
+                                <p class="mb-0 text-white small-font">5</p>
                             </div>
                         </div>
                         <div class="col-12 col-lg-6 col-xl-3 border-light">
                             <div class="card-body">
-                                <h5 class="text-white mb-0">5630 <span class="float-right"><i class="fa fa-solid fa-door"></i></span></h5>   
-                                <p class="mb-0 text-white small-font">Messages</p>
+                                <h5 class="text-white mb-0">Jumlah Kelas <span class="float-right"><i class="fa-solid fa-door-open"></i></i></span></h5>   
+                                <p class="mb-0 text-white small-font">35</p>
                             </div>
                         </div>
                     </div>
@@ -133,20 +135,20 @@
                 <div class="col-12 col-lg-12">
                     <div class="card">
                         <div class="card-header">INFORMASI
-                        <div class="card-action">
-                            <div class="dropdown">
-                            <a href="javascript:void();" class="dropdown-toggle dropdown-toggle-nocaret" data-toggle="dropdown">
-                            <i class="icon-options"></i>
-                            </a>
-                            <div class="dropdown-menu dropdown-menu-right">
-                            <a class="dropdown-item" href="javascript:void();">Action</a>
-                            <a class="dropdown-item" href="javascript:void();">Another action</a>
-                            <a class="dropdown-item" href="javascript:void();">Something else here</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="javascript:void();">Separated link</a>
-                            </div>
-                            </div>
-                            </div>
+                            <!-- <div class="card-action">
+                                <div class="dropdown">
+                                <a href="javascript:void();" class="dropdown-toggle dropdown-toggle-nocaret" data-toggle="dropdown">
+                                <i class="icon-options"></i>
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-right">
+                                <a class="dropdown-item" href="javascript:void();">Action</a>
+                                <a class="dropdown-item" href="javascript:void();">Another action</a>
+                                <a class="dropdown-item" href="javascript:void();">Something else here</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="javascript:void();">Separated link</a>
+                                </div>
+                                </div>
+                            </div> -->
                         </div>
                         <div class="table-responsive">
                             <table class="table align-items-center table-flush table-borderless">
@@ -165,35 +167,35 @@
                                         <td>Dr. Budi</td>
                                         <td>Senin, 08:00-10:00</td>
                                         <td>Lab Komputer 1</td>
-                                        <td><a href="/dosen/detail" class="btn btn-primary">Lanjut</a></td>
+                                        <td><a href="/dosen/matakuliah/detail" class="btn btn-primary">Lanjut</a></td>
                                     </tr>
                                     <tr>
                                         <td>Sistem Basis Data</td>
                                         <td>Dr. Siti</td>
                                         <td>Rabu, 10:00-12:00</td>
                                         <td>Ruang 203</td>
-                                        <td><a href="/dosen/detail" class="btn btn-primary">Lanjut</a></td>
+                                        <td><a href="/dosen/matakuliah/detail" class="btn btn-primary">Lanjut</a></td>
                                     </tr>
                                     <tr>
                                         <td>Struktur Data</td>
                                         <td>Dr. Hasan</td>
                                         <td>Kamis, 13:00-15:00</td>
                                         <td>Lab Komputer 2</td>
-                                        <td><a href="/dosen/detail" class="btn btn-primary">Lanjut</a></td>
+                                        <td><a href="/dosen/matakuliah/detail" class="btn btn-primary">Lanjut</a></td>
                                     </tr>
                                     <tr>
                                         <td>Jaringan Komputer</td>
                                         <td>Dr. Amin</td>
                                         <td>Selasa, 09:00-11:00</td>
                                         <td>Ruang 305</td>
-                                        <td><a href="/dosen/detail" class="btn btn-primary">Lanjut</a></td>
+                                        <td><a href="/dosen/matakuliah/detail" class="btn btn-primary">Lanjut</a></td>
                                     </tr>
                                     <tr>
                                         <td>Metodologi Agile</td>
                                         <td>Pak Adam</td>
                                         <td>Jumat, 08:00-10:00</td>
                                         <td>Ruang 102</td>
-                                        <td><a href="/dosen/detail" class="btn btn-primary">Lanjut</a></td>
+                                        <td><a href="/dosen/matakuliah/detail" class="btn btn-primary">Lanjut</a></td>
                                     </tr>
                                 </tbody>                                    
                             </table>

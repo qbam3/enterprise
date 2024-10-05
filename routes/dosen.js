@@ -28,7 +28,7 @@ router.get('/materi', function(req, res, next) {
     res.render('materi/index');
 });
 
-router.get('/materi', function(req, res, next) {
+router.get('/materi/create', function(req, res, next) {
     res.render('materi/create');
 });
 
@@ -36,7 +36,7 @@ router.get('/pengumuman', function(req, res, next) {
     res.render('pengumuman/index');
 });
 
-router.get('/pengumuman', function(req, res, next) {
+router.get('/pengumuman/create', function(req, res, next) {
     res.render('pengumuman/create');
 });
 
@@ -44,7 +44,7 @@ router.get('/tugas', function(req, res, next) {
     res.render('tugas/index');
 });
 
-router.get('/tugas', function(req, res, next) {
+router.get('/tugas/create', function(req, res, next) {
     res.render('tugas/create');
 });
 

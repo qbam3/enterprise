@@ -20,7 +20,7 @@ footer {
   text-align: center; /* Penataan teks di tengah */
   padding: 10px;
   width: 100%;
-  position: relative; /* Pastikan footer tidak mengganggu konten */
+  position: fixed; /* Pastikan footer tidak mengganggu konten */
   bottom: 0;
   height: 50px; /* Tinggi footer */
 }

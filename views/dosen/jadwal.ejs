@@ -1,0 +1,178 @@
+<%- include('../partials/__head') %>
+ 
+<!-- Start wrapper-->
+<div id="wrapper">
+    <div id="sidebar-wrapper" data-simplebar="" data-simplebar-auto-hide="true">
+        <div class="brand-logo">
+            <a href="/users">
+                <img src="/images/Logo_PENS.png" class="logo-icon img-fluid" alt="logo icon" style="width: 50px; height: 50;">
+
+            <h5 class="logo-text">E-DITI</h5>
+            </a>
+        </div>
+        <ul class="sidebar-menu do-nicescrol">
+            <li class="sidebar-header">MAIN NAVIGATION</li>
+            <li>
+                <a href="/users">
+                <i class="zmdi zmdi-view-dashboard"></i> <span>Dashboard</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="/dosen/matakuliah">
+                    <i class="zmdi zmdi-library"></i><span>Matakuliah</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="/dosen/jadwal">
+                    <i class="fa-regular fa-calendar"></i> <span>Jadwal</span>
+                </a>
+            </li>
+
+            <li class="sidebar-header">SUB-NAVIGATION</li>
+            <li><a href="/logout"><i class="fas fa-home"></i><span>Logout</span></a></li>
+        </ul>
+    </div>
+    <!--End sidebar-wrapper-->
+
+    <!--Start topbar header-->
+    <header class="topbar-nav">
+        <nav class="navbar navbar-expand fixed-top">
+            <ul class="navbar-nav mr-auto align-items-center">
+                <li class="nav-item">
+                    <a class="nav-link toggle-menu" href="javascript:void();">
+                        <i class="icon-menu menu-icon"></i>
+                    </a>
+                </li>
+                <li class="nav-item">
+                <form class="search-bar">
+                    <input type="text" class="form-control" placeholder="Enter keywords">
+                    <a href="javascript:void();"><i class="icon-magnifier"></i></a>
+                </form>
+                </li>
+            </ul> 
+            <ul class="navbar-nav align-items-center right-nav-link">
+                <!-- <li class="nav-item dropdown-lg">
+                    <a class="nav-link dropdown-toggle dropdown-toggle-nocaret waves-effect" data-toggle="dropdown" href="javascript:void();">
+                    <i class="fa fa-envelope-open-o"></i></a>
+                </li>
+                <li class="nav-item dropdown-lg">
+                    <a class="nav-link dropdown-toggle dropdown-toggle-nocaret waves-effect" data-toggle="dropdown" href="javascript:void();">
+                    <i class="fa fa-bell-o"></i></a>
+                </li>
+                <li class="nav-item language">
+                    <a class="nav-link dropdown-toggle dropdown-toggle-nocaret waves-effect" data-toggle="dropdown" href="javascript:void();"><i class="fa fa-flag"></i></a>
+                    <ul class="dropdown-menu dropdown-menu-right">
+                        <li class="dropdown-item"> <i class="flag-icon flag-icon-gb mr-2"></i> English</li>
+                        <li class="dropdown-item"> <i class="flag-icon flag-icon-fr mr-2"></i> French</li>
+                        <li class="dropdown-item"> <i class="flag-icon flag-icon-cn mr-2"></i> Chinese</li>
+                        <li class="dropdown-item"> <i class="flag-icon flag-icon-de mr-2"></i> German</li>
+                        </ul>
+                </li> -->
+                <li class="nav-item">
+                    <a class="nav-link dropdown-toggle dropdown-toggle-nocaret" data-toggle="dropdown" href="#">
+                        <span class="user-profile"><img src="/images/Logo_PENS.png" class="img-circle" alt="user avatar"></span>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-right">
+                        <li class="dropdown-item user-details">
+                            <a href="javaScript:void();">
+                                <div class="media">
+                                    <div class="avatar"><img class="align-self-start mr-3" src="/images/Logo_PENS.png" alt="user avatar"></div>
+                                    <div class="media-body">
+                                    <h6 class="mt-2 user-title">Sarajhon Mccoy</h6>
+                                    <p class="user-subtitle">mccoy@example.com</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="dropdown-divider"></li>
+                        <!-- <li class="dropdown-item"><a href="/dosen/profile"><i class="icon-user mr-2"></i> Profile</a></li> -->
+                        <li class="dropdown-item"><a href="/logout"><i class="fas fa-home mr-2"></i>Logout</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <!--End topbar header-->
+
+    <div class="clearfix"></div>
+    <div class="content-wrapper">
+        <div class="container-fluid">
+
+            <!--Start Dashboard Content-->  
+            <div class="row">
+                <div class="col-12 col-lg-12">
+                    <div class="card">
+                        <div class="card-header">JADWAL
+                        <div class="card-action">
+                            <!-- <div class="dropdown">
+                            <a href="javascript:void();" class="dropdown-toggle dropdown-toggle-nocaret" data-toggle="dropdown">
+                            <i class="icon-options"></i>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right">
+                            <a class="dropdown-item" href="javascript:void();">Action</a>
+                            <a class="dropdown-item" href="javascript:void();">Another action</a>
+                            <a class="dropdown-item" href="javascript:void();">Something else here</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="javascript:void();">Separated link</a>
+                            </div>
+                            </div> -->
+                            </div>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="table align-items-center table-flush table-borderless">
+                                <thead> 
+                                    <tr>
+                                        <th>Matakuliah</th>
+                                        <th>Hari/Waktu</th>
+                                        <th>Ruangan</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Algoritma dan Pemrograman</td>
+                                        <td>Senin, 08:00-10:00</td>
+                                        <td>Lab Komputer 1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Sistem Basis Data</td>
+                                        <td>Rabu, 10:00-12:00</td>
+                                        <td>Ruang 203</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Struktur Data</td>
+                                        <td>Kamis, 13:00-15:00</td>
+                                        <td>Lab Komputer 2</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Jaringan Komputer</td>
+                                        <td>Selasa, 09:00-11:00</td>
+                                        <td>Ruang 305</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Metodologi Agile</td>
+                                        <td>Jumat, 08:00-10:00</td>
+                                        <td>Ruang 102</td>
+                                    </tr>
+                                </tbody>                                    
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div><!--End Row-->
+
+            <!--End Dashboard Content-->
+	  
+            <!--start overlay-->
+            <div class="overlay toggle-menu"></div>
+            <!--end overlay-->
+		
+        </div>
+        <!-- End container-fluid-->
+    </div><!--End content-wrapper-->
+   <!--Start Back To Top Button-->
+    <a href="javaScript:void();" class="back-to-top"><i class="fa fa-angle-double-up"></i> </a>
+    <!--End Back To Top Button-->
+	
+<%- include('../partials/__foot') %>
