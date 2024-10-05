@@ -23,8 +23,16 @@ router.get('/login', function(req, res, next){
 })
 
 router.post('/saveusers', async (req, res)=>{
-  let {username, password, role, email} =
-  req.body
+  let {username, password, email} = req.body
+  let role;
+  
+      if(email.includes("mahasiswa")){
+        role = '3'
+      }else if(email.includes("dosen")){
+        role = '2'
+      }else{
+        role = '1'
+      }
   let enkripsi = await bcrypt.hash(password, 10);
   let data = {
     username,

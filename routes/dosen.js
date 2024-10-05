@@ -7,7 +7,8 @@ var model_absensi = require('../model/model_absensi')
 router.get('/', async (req, res, next)=>{
     let Data = await model_users.getAll();
     res.render('dosen/index', {
-        Username: Data[0].username
+        Username: Data[0].username,
+        Email: Data[0].email
     })
 })
 
