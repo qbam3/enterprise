@@ -71,7 +71,7 @@ $(function () {
         e.preventDefault();
         $(".right-sidebar").toggleClass("right-toggled");
     });
-	
+	theme9();
 	$('#theme1').click(theme1);
     $('#theme2').click(theme2);
     $('#theme3').click(theme3);

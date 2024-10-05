@@ -29,3 +29,28 @@ footer {
 * {
   box-sizing: border-box; /* Pastikan padding dan border dihitung dalam ukuran elemen */
 }
+.ctt{
+  margin-left: 20px;
+}
+.text-truncate-custom {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-box;
+  display: box;
+  
+  /* Gunakan prefiks dan properti standar */
+  -webkit-line-clamp: 2; /* Untuk browser berbasis WebKit seperti Chrome, Safari */
+  line-clamp: 2; /* Versi standar jika sudah diadopsi oleh browser */
+
+  -webkit-box-orient: vertical;
+  box-orient: vertical;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
+}
+.scrollable-text {
+  max-height: 100px; /* Tentukan tinggi maksimal elemen */
+  overflow-y: auto;  /* Tambahkan kemampuan untuk scroll secara vertikal */
+  padding-right: 10px; /* Memberi ruang agar tidak overlap dengan scrollbar */
+}
