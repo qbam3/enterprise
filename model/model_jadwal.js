@@ -24,9 +24,9 @@ class model_jadwal{
         })
     }
 
-    static async getId(id){
+    static async getId(id_jadwal){
         return new Promise((resolve, reject) => {
-            connection.query('select * from jadwal where id_jadwal = ' + id, (err, rows)=>{
+            connection.query('select * from jadwal where id_jadwal = ' + [id_jadwal], (err, rows)=>{
                 if(err){
                     reject(err)
                 }else{
@@ -58,6 +58,45 @@ class model_jadwal{
                 }
             })
         })
+    }
+
+    static async updateStatusPresensi(id_jadwal, startAbsensi, endAbsensi) {
+        return new Promise((resolve, reject) => {
+            const query = `
+                UPDATE 
+                    jadwal 
+                SET 
+                    start_absensi = ?, 
+                    end_absensi = ? 
+                WHERE 
+                    id_jadwal = ?`;
+            
+            connection.query(query, [startAbsensi, endAbsensi, id_jadwal], (err, result) => {
+                if (err) {
+                    reject(err);
+                } else {
+                    resolve(result);
+                }
+            });
+        });
+    }
+
+    static async deletePresensi(id_jadwal) {
+        return new Promise((resolve, reject) => {
+            const query = `
+                DELETE FROM 
+                    presensi 
+                WHERE 
+                    id_jadwal = ?`;
+            
+            connection.query(query, [id_jadwal], (err, result) => {
+                if (err) {
+                    reject(err);
+                } else {
+                    resolve(result);
+                }
+            });
+        });
     }
 }
 

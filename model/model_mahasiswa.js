@@ -24,9 +24,9 @@ class model_mahasiswa{
         })
     }
 
-    static async getId(id){
+    static async getId(id_mahasiswa){
         return new Promise((resolve, reject) => {
-            connection.query('select * from mahasiswa where id_mahasiswa = ' + id, (err, rows)=>{
+            connection.query('select * from mahasiswa where id_mahasiswa = ?' [id_mahasiswa], (err, rows)=>{
                 if(err){
                     reject(err)
                 }else{
@@ -39,6 +39,18 @@ class model_mahasiswa{
     static async Update(id ,Data){
         return new Promise((resolve, reject) => {
             connection.query("update mahasiswa set ? where id_mahasiswa = ", + id, Data,(err, rows)=>{
+                if(err){
+                    reject(err)
+                }else{
+                    resolve(rows)
+                }
+            })
+        })
+    }
+    
+    static async Count(){
+        return new Promise((resolve, reject) => {
+            connection.query("SELECT COUNT(id_mahasiswa) AS total_mahasiswa FROM mahasiswa",(err, rows)=>{
                 if(err){
                     reject(err)
                 }else{

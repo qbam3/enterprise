@@ -122,11 +122,20 @@
               <div class="row row-group m-0">
                   <div class="col-12 col-lg-6 col-xl-12 border-light">
                     <div class="card-body">
-                      <h4 class="text-white mb-3">Konsep Jaringan </h4>
-                      <h6 class="mb-0 text-white small-font">NIP:</h6><p>198701062022031002</p>
-                      <h6 class="mb-0 text-white small-font">Nama Dosen	:</h6> <p>Joko Prasetyo S.ST., M.Kom</p>
-                      <h6 class="mb-0 text-white small-font">Jadwal</h6>	<p>Senin (10:30 - 12:10) PSDKU-SM-K-101</p>
-                      <button type="submit" class="btn btn-primary">PRESENSI</button>
+                        <h4 class="text-white mb-3"><%=  nama_mata_kuliah %></h4>
+                        <h6 class="mb-0 text-white small-font">Nama Dosen</h6>
+                        <p><%= nama_dosen %></p>
+                        <h6 class="mb-0 text-white small-font">Jadwal Kuliah:</h6>
+                        <p><%= jadwal %>, <%= start_absen %> - <%= end_absen %></p>
+                        <h6 class="mb-0 text-white small-font">Kelas</h6>
+                        <p><%= ruangan %></p>
+                        <h6 class="mb-0 text-white small-font">Presensi Terakhir</h6>
+                        <p><%=  %></p>
+                        <form action="/mahasiswa/jadwal/absen" method="POST">
+                            <input type="hidden" name="id_absensi" value="<%= id_absensi %>">
+                            <input type="hidden" name="id_mahasiswa" value="<%= id_mahasiswa %>">
+                            <button type="submit" class="btn btn-primary">PRESENSI</button>
+                        </form>
                     </div>
                   </div>
                     

@@ -111,54 +111,25 @@
     <div class="clearfix"></div>
     <div class="content-wrapper">
         <div class="container-fluid">
-
+    
             <!--Start Dashboard Content-->
             <div class="row">
+            <% getJoin.forEach((item) => { %> <!-- Mulai perulangan -->
                 <div class="col-sm-6 mb-3 mb-sm-0">
                   <div class="card">
                     <div class="card-body">
-                      <h5 class="card-title">Konsep Jaringan</h5>
-                      <p class="card-text">Dosen: Joko Prasetyo</p>
-                      <p class="card-text">Ruangan: K 102</p>
-                      <p class="card-text">Jam: 08.00-09.40</p>
-                      <a href="/mahasiswa/matakuliah/detail" class="btn btn-primary">Lanjut</a>
+                      <h5 class="card-title"><%= item.nama_mata_kuliah %></h5> 
+                      <p class="card-text">Dosen: <%= item.nama_dosen %></p> 
+                      <p class="card-text">Ruangan: <%= item.kelas %></p> 
+                      <p class="card-text">Jadwal: <%= item.jadwal_kuliah %>, <%= start_absen %> - <%= end_absen %></p> 
+                      <a href="/mahasiswa/jadwal/<%= item.id_jadwal %>" class="btn btn-primary">Lanjut</a>
                     </div>
                   </div>
                 </div>
-                <div class="col-sm-6">
-                  <div class="card">
-                    <div class="card-body">
-                      <h5 class="card-title">Praktek Konsep Jaringan</h5>
-                      <p class="card-text">Dosen: Joko Prasetyo</p>
-                      <p class="card-text">Ruangan: Lab 204</p>
-                      <p class="card-text">Jam: 09.40-12.10</p>
-                      <a href="/mahasiswa/matakuliah/detail" class="btn btn-primary">Lanjut</a>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-sm-6">
-                    <div class="card">
-                      <div class="card-body">
-                        <h5 class="card-title">Basis Data Lanjut</h5>
-                        <p class="card-text">Dosen: Lusiana Agustien</p>
-                        <p class="card-text">Ruangan: K 101</p>
-                        <p class="card-text">Jam: 08.00-09.40</p>
-                        <a href="/mahasiswa/matakuliah/detail" class="btn btn-primary">Lanjut</a>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-sm-6">
-                    <div class="card">
-                      <div class="card-body">
-                        <h5 class="card-title">Praktek Basis Data Lanjut</h5>
-                        <p class="card-text">Dosen: Lusiana Agustien</p>
-                        <p class="card-text">Ruangan: Lab 202</p>
-                        <p class="card-text">Jam: 09.40-12.10</p>
-                        <a href="/mahasiswa/matakuliah/detail" class="btn btn-primary">Lanjut</a>
-                      </div>
-                    </div>
-                  </div>
-              </div>
+            <% }); %> 
+            </div>
+        </div>
+    </div>
               
             <!--End Dashboard Content-->
 	  

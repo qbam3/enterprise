@@ -1,4 +1,5 @@
 <%- include('../partials/__head') %>
+<%- include('../partials/__messages') %>
  
     <!-- Start wrapper-->
     <div id="wrapper">
@@ -117,22 +118,34 @@
 
     <!--Start Dashboard Content-->
 
-      <div class="card mt-3">
-          <div class="card-content">
-              <div class="row row-group m-0">
-                  <div class="col-12 col-lg-6 col-xl-12 border-light">
-                    <div class="card-body">
-                      <h4 class="text-white mb-3">Konsep Jaringan </h4>
-                      <h6 class="mb-0 text-white small-font">NIP:</h6><p>198701062022031002</p>
-                      <h6 class="mb-0 text-white small-font">Nama Dosen	:</h6> <p>Joko Prasetyo S.ST., M.Kom</p>
-                      <h6 class="mb-0 text-white small-font">Jadwal</h6>	<p>Senin (10:30 - 12:10) PSDKU-SM-K-101</p>
-                      <button type="submit" class="btn btn-primary">BUKA PRESENSI</button>
-                      <button type="submit" class="btn btn-danger" disabled>TUTUP PRESENSI</button>
-                    </div>
-                  </div>
-                    
-              </div>
-          </div>
+    <div class="card-content">
+        <div class="row row-group m-0">
+            <div class="col-12 col-lg-6 col-xl-12 border-light">
+                <div class="card-body">
+                    <h4 class="text-white mb-3"><%=  nama_mata_kuliah %></h4>
+                    <h6 class="mb-0 text-white small-font">Nama Dosen</h6>
+                    <p><%= nama_dosen %></p>
+                    <h6 class="mb-0 text-white small-font">Jadwal Kuliah:</h6>
+                    <p><%= jadwal %>, <%= start_absen %> - <%= end_absen %></p>
+                    <h6 class="mb-0 text-white small-font">Kelas</h6>
+                    <p><%= ruangan %></p>
+                    <h6 class="mb-0 text-white small-font">Presensi Terakhir</h6>
+                    <p><%= histori %></p>
+                    <form action="/dosen/jadwal/bukaPresensi" method="POST">
+                        <input type="hidden" name="id_jadwal" value="<%= id_jadwal %>">
+                        <button type="submit" class="btn btn-primary">BUKA PRESENSI</button>
+                    </form>
+    
+                    <form action="/dosen/jadwal/batalPresensi" method="POST">
+                        <input type="hidden" name="id_jadwal" value="<%= id_jadwal %>">
+                        <button type="submit" class="btn btn-danger">BATAL PRESENSI</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
           <div class="table-responsive mt-3"></div>
             <table class="table table-hover"><h5 class="ctt">Catatan Presensi</h5>
               <thead>

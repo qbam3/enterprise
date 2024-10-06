@@ -48,6 +48,19 @@ class model_kelas{
         })
     }
 
+    static async Count(){
+        return new Promise((resolve, reject) => {
+            connection.query("SELECT COUNT(id_kelas) AS total_kelas FROM class",(err, rows)=>{
+                if(err){
+                    reject(err)
+                }else{
+                    resolve(rows)
+                }
+            })
+        })
+    }
+
+
     static async Delete(id){
         return new Promise((resolve, reject) => {
             connection.query("delete from class where id_kelas = ", + id,(err, rows)=>{
