@@ -1,4 +1,5 @@
 <%- include('../partials/__head') %>
+<%- include('../partials/__messages') %>
  
     <!-- Start wrapper-->
     <div id="wrapper">
@@ -12,32 +13,32 @@
             </div>
             <ul class="sidebar-menu do-nicescrol">
                 <li class="sidebar-header">MAIN NAVIGATION</li>
-            <li>
-                <a href="/users">
-                    <i class="zmdi zmdi-view-dashboard"></i> <span>Dashboard</span>
-                </a>
-            </li>
+                <li>
+                    <a href="/mahasiswa/<%= id_mahasiswa %>">
+                        <i class="zmdi zmdi-view-dashboard"></i> <span>Dashboard</span>
+                    </a>
+                </li>
+    
+                <li>
+                    <a href="/mahasiswa/<%= id_mahasiswa %>/matakuliah">
+                        <i class="zmdi zmdi-library"></i><span>Daftar Matakuliah</span>
+                    </a>
+                </li>
+    
+                <li>
+                    <a href="/mahasiswa/<%= id_mahasiswa %>/materi/<%= id_jadwal %>">
+                        <i class="fa-solid fa-book"></i></i> <span>Materi</span>
+                    </a>
+                </li>
+    
+                <li>
+                    <a href="/mahasiswa/<%= id_mahasiswa %>/tugas/<%= id_jadwal %>">
+                        <i class="zmdi zmdi-assignment"></i> <span>Tugas</span>
+                    </a>
+                </li>
 
             <li>
-                <a href="/mahasiswa/matakuliah">
-                    <i class="zmdi zmdi-library"></i><span>Daftar Matakuliah</span>
-                </a>
-            </li>
-
-            <li>
-                <a href="/mahasiswa/materi">
-                    <i class="fa-solid fa-book"></i></i> <span>Materi</span>
-                </a>
-            </li>
-
-            <li>
-                <a href="/mahasiswa/tugas">
-                    <i class="zmdi zmdi-assignment"></i> <span>Tugas</span>
-                </a>
-            </li>
-
-            <li>
-                <a href="/mahasiswa/pengumuman">
+                <a href="/mahasiswa/<%= id_mahasiswa %>/pengumuman/<%= id_jadwal %>">
                     <i class="fa-solid fa-scroll"></i> <span>Pengumuman</span>
                 </a>
             </li>
@@ -129,43 +130,36 @@
                         <p><%= jadwal %>, <%= start_absen %> - <%= end_absen %></p>
                         <h6 class="mb-0 text-white small-font">Kelas</h6>
                         <p><%= ruangan %></p>
-                        <h6 class="mb-0 text-white small-font">Presensi Terakhir</h6>
-                        <p><%=  %></p>
-                        <form action="/mahasiswa/jadwal/absen" method="POST">
-                            <input type="hidden" name="id_absensi" value="<%= id_absensi %>">
-                            <input type="hidden" name="id_mahasiswa" value="<%= id_mahasiswa %>">
-                            <button type="submit" class="btn btn-primary">PRESENSI</button>
-                        </form>
+                        <% if (typeof isAbsensiOpen === 'undefined' || isAbsensiOpen.length === 0 || isAbsensiDone) {%>
+                        <button id="presensiButton" type="button" class="btn btn-primary" disabled>PRESENSI</button>
+                       <% } else { %>
+                        <form id="presensiForm" action="/mahasiswa/<%= id_mahasiswa %>/matakuliah/<%= id_jadwal %>/absen" method="POST">
+                            <button id="presensiButton" type="submit" class="btn btn-primary">PRESENSI</button>
+                       </form>
+                        <% } %>
                     </div>
                   </div>
-                    
               </div>
           </div>
           <div class="table-responsive mt-3"></div>
             <table class="table table-hover"><h5 class="ctt">Catatan Presensi</h5>
               <thead>
                 <tr>
-                  <th scope="col">#</th>
                   <th scope="col">Tanggal</th>
-                  <th scope="col">Jumlah Presensi</th>
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <th scope="row">1</th>
-                  <td>Selasa, 24 September 2024 - 13:09:48</td>
-                  <td>16</td>
-                </tr>
-                <tr>
-                  <th scope="row">2</th>
-                  <td>Selasa, 17 September 2024 - 13:11:00</td>
-                  <td>16</td>
-                </tr>
-                <tr>
-                  <th scope="row">3</th>
-                  <td>Selasa, 10 September 2024 - 13:24:08</td>
-                  <td>16</td>
-                </tr>
+                <% if (dataDetailAbsen.length > 0) { %>
+                    <% dataDetailAbsen.forEach((item) => { %>
+                        <tr>
+                            <td><%= item.tanggal_absensi.toString().slice(0, 15) %> <%= item.waktu_absensi%></td>
+                        </tr>
+                    <% }); %>
+                <% } else { %>
+                    <tr class="no-history">
+                        <td colspan="3" style="text-align: center;">Belum ada mahasiswa yang ditambahkan.</td>
+                    </tr>
+                <% } %>
               </tbody>
             </table>
       </div>  
@@ -186,86 +180,19 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>3123522001</td>
-                            <td>Ibram Maulana Akhsanul Qasasi</td>
-                            <td>L</td>
-                        </tr>
-                        <tr>
-                            <td>3123522002</td>
-                            <td>Ahmad Maulana Afandi</td>
-                            <td>L</td>
-                        </tr>
-                        <tr>
-                            <td>3123522003</td>
-                            <td>Almas Daffa Avicena</td>
-                            <td>L</td>
-                        </tr>
-                        <tr>
-                            <td>3123522004</td>
-                            <td>Eka Intan Mauliyana</td>
-                            <td>P</td>
-                        </tr>
-                        <tr>
-                            <td>3123522005</td>
-                            <td>Vernanda Mulia Hamonangan Manurung</td>
-                            <td>L</td>
-                        </tr>
-                        <tr>
-                            <td>3123522006</td>
-                            <td>Muhammad Ifzal Faidurrahman</td>
-                            <td>L</td>
-                        </tr>
-                        <tr>
-                            <td>3123522007</td>
-                            <td>Dafa Ahmad Fahrisi</td>
-                            <td>L</td>
-                        </tr>
-                        <tr>
-                            <td>3123522008</td>
-                            <td>Ahmad Ari Fauzi</td>
-                            <td>L</td>
-                        </tr>
-                        <tr>
-                            <td>3123522009</td>
-                            <td>Rahmat M. Alfatih</td>
-                            <td>L</td>
-                        </tr>
-                        <tr>
-                            <td>31235220011</td>
-                            <td>Aqil Yoga Pramono</td>
-                            <td>L</td>
-                        </tr>
-                        <tr>
-                            <td>31235220012</td>
-                            <td>R.P. A. Lexy Mangku Saputra</td>
-                            <td>L</td>
-                        </tr>
-                        <tr>
-                            <td>31235220015</td>
-                            <td>A. Haidar Hafiz</td>
-                            <td>L</td>
-                        </tr>
-                        <tr>
-                            <td>31235220016</td>
-                            <td>Agiel Maula</td>
-                            <td>L</td>
-                        </tr>
-                        <tr>
-                            <td>31235220017</td>
-                            <td>Moh Iqbal Triwijaya</td>
-                            <td>L</td>
-                        </tr>
-                        <tr>
-                            <td>31235220018</td>
-                            <td>Rahadyan Danang Susetyo Pranawa</td>
-                            <td>L</td>
-                        </tr>
-                        <tr>
-                            <td>31235220019</td>
-                            <td>Tamisa Ulinda Marpaung</td>
-                            <td>P</td>
-                        </tr>
+                        <% if (dataMahasiswa.length > 0) { %>
+                            <% dataMahasiswa.forEach((item) => { %>
+                                <tr>
+                                    <td><%= item.nrp %></td>
+                                    <td><%= item.nama_mahasiswa %></td>
+                                    <td><%= item.jenis_kelamin %></td>
+                                </tr>
+                            <% }); %>
+                        <% } else { %>
+                            <tr class="no-history">
+                                <td colspan="3" style="text-align: center;">Belum ada mahasiswa yang ditambahkan.</td>
+                            </tr>
+                        <% } %>
                     </tbody>
                 </table>
             </div>
@@ -277,7 +204,6 @@
 
 </div>
 <!-- End of Main Content -->
- 
 
 <%- include('../partials/__foot') %>
 	

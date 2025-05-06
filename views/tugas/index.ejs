@@ -5,45 +5,44 @@
     <div id="sidebar-wrapper" data-simplebar="" data-simplebar-auto-hide="true">
         <div class="brand-logo">
             <a href="/users">
-            <img src="/images/Logo_PENS.png" class="logo-icon" alt="logo icon">
+            <img src="/images/logo_editi-removebg-preview.png" class="logo-icon" alt="logo icon">
             <h5 class="logo-text">E-DITI</h5>
             </a>
         </div>
         <ul class="sidebar-menu do-nicescrol">
             <li class="sidebar-header">MAIN NAVIGATION</li>
             <li>
-                <a href="/users">
+                <a href="/dosen/<%= id_dosen %>">
                     <i class="zmdi zmdi-view-dashboard"></i> <span>Dashboard</span>
                 </a>
             </li>
 
             <li>
-                <a href="/dosen/matakuliah">
+                <a href="/dosen/<%= id_dosen %>/matakuliah">
                     <i class="zmdi zmdi-library"></i><span>Daftar Matakuliah</span>
                 </a>
             </li>
 
             <li>
-                <a href="/dosen/materi">
+                <a href="/dosen/<%= id_dosen %>/materi/<%= id_jadwal %>">
                     <i class="fa-solid fa-book"></i></i> <span>Materi</span>
                 </a>
             </li>
 
             <li>
-                <a href="/dosen/tugas">
+                <a href="/dosen/<%= id_dosen %>/tugas/<%= id_jadwal %>">
                     <i class="zmdi zmdi-assignment"></i> <span>Tugas</span>
                 </a>
             </li>
 
             <li>
-                <a href="/dosen/pengumuman">
+                <a href="/dosen/<%= id_dosen%>/pengumuman/<%= id_jadwal%>">
                     <i class="fa-solid fa-scroll"></i> <span>Pengumuman</span>
                 </a>
             </li>
 
             <li class="sidebar-header">SUB-NAVIGATION</li>
-            <li><a href="/users"><i class="fa-solid fa-backward"></i> <span>Kembali</span></a></li>
-
+            <li><a href="/dosen/<%= id_dosen %>/matakuliah"><i class="fa-solid fa-backward"></i> <span>Kembali</span></a></li>
         </ul>
     </div>
     <!--End sidebar-wrapper-->
@@ -84,13 +83,13 @@
                 </li> -->
                 <li class="nav-item">
                     <a class="nav-link dropdown-toggle dropdown-toggle-nocaret" data-toggle="dropdown" href="#">
-                        <span class="user-profile"><img src="/images/Logo_PENS.png" class="img-circle" alt="user avatar"></span>
+                        <span class="user-profile"><img src="/images/logo_editi-removebg-preview.png" class="img-circle" alt="user avatar"></span>
                     </a>
                     <ul class="dropdown-menu dropdown-menu-right">
                         <li class="dropdown-item user-details">
                             <a href="javaScript:void();">
                                 <div class="media">
-                                    <div class="avatar"><img class="align-self-start mr-3" src="/images/Logo_PENS.png" alt="user avatar"></div>
+                                    <div class="avatar"><img class="align-self-start mr-3" src="/images/logo_editi-removebg-preview.png" alt="user avatar"></div>
                                     <div class="media-body">
                                     <h6 class="mt-2 user-title">Sarajhon Mccoy</h6>
                                     <p class="user-subtitle">mccoy@example.com</p>
@@ -113,111 +112,58 @@
         <div class="container-fluid">
 
             <!--Start Dashboard Content-->
-            <a href="/dosen/tugas/create" class="btn btn-success mb-3">Tambahkan Tugas<i class="fa-solid fa-plus"></i></a>
+            <a href="/dosen/<%= id_dosen %>/tugas/<%= id_jadwal %>/create" class="btn btn-success mb-3">Tambahkan Tugas<i class="fa-solid fa-plus"></i></a>
             <div class="row">
-                <!-- Card untuk Tugas 1 -->
-                <div class="col-sm-6">
-                    <div class="card mb-3">
-                        <div class="card-body">
-                            <h5 class="card-title">TC/IP Physical Layer</h5>
-                            <p class="card-text text-truncate-custom">
-                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quos doloribus natus debitis ad nesciunt architecto perferendis non alias?...
-                            </p>
-                            <span class="text-muted d-block">Deadline: Selasa, 01 Oktober 2024 - 23:59</span>
-                            <span class="text-muted d-block mb-3">Mengumpulkan: Selasa, 01 Oktober 2024 - 23:59</span>
-                            <button type="submit" class="btn btn-primary w-100 d-block mb-2">Submit</button>
-                            <!-- Tombol untuk membuka modal pop-up -->
-                            <button type="button" class="btn btn-secondary w-100" data-bs-toggle="modal" data-bs-target="#infoModal1">
-                                Informasi Lebih Lanjut
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            
-                <!-- Modal untuk Tugas 1 -->
-                <div class="modal fade" id="infoModal1" tabindex="-1" aria-hidden="true">
-                    <div class="modal-dialog modal-dialog-centered">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="infoModalLabel2">Detail TC/IP Physical Layer</h5>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                            </div>
-                            <div class="modal-body" style="color: black;">
-                                <div class="description">
-                                    <strong>Deskripsi:</strong> Tonton tutorial youtube dan rangkum
-                                </div>
-                                <div class="attachment mt-3">
-                                    <strong>Pengumpulan:</strong>
-                                    <span class="text">Selasa, 01 Oktober 2024 - 23:59</span>
-                                </div>
-                                <div class="attachment mt-3">
-                                    <strong>Deadline:</strong>
-                                    <span class="text">Selasa, 01 Oktober 2024 - 23:59</span>
-                                </div>
-                                <div class="attachment mt-3">
-                                    <strong>Lampiran:</strong>
-                                    <a href="/download" class="btn btn-primary mr-3">Download <i class="fa-solid fa-download"></i></a>
-                                </div>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+                <% dataTugas.forEach(function(tugas, index) { %>
+                    <div class="col-sm-6">
+                        <div class="card mb-3">
+                            <div class="card-body">
+                                <h5 class="card-title"><%= tugas.judul_tugas %></h5>
+                                <p class="card-text text-truncate-custom">
+                                    <%= tugas.deskripsi_tugas.substring(0, 100) %>...
+                                </p>
+                                <span class="text-muted d-block">Deadline: <%= tugas.deadline %></span>
+                                <!-- Tombol untuk membuka modal pop-up -->
+                                <button type="button" class="btn btn-secondary w-100" data-bs-toggle="modal" data-bs-target="#infoModal<%= index %>">
+                                    Informasi Lebih Lanjut
+                                </button>
                             </div>
                         </div>
                     </div>
-                </div>
-            
-                <!-- Card untuk Tugas 2 -->
-                <div class="col-sm-6">
-                    <div class="card mb-3">
-                        <div class="card-body">
-                            <h5 class="card-title">Pengkabelan</h5>
-                            <p class="card-text text-truncate-custom">
-                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quos doloribus natus debitis ad nesciunt architecto perferendis non alias?...
-                            </p>
-                            <span class="text-muted d-block">Deadline: Selasa, 01 Oktober 2024 - 23:59</span>
-                            <span class="text-muted d-block mb-3">Mengumpulkan: Selasa, 01 Oktober 2024 - 23:59</span>
-                            <button type="submit" class="btn btn-primary w-100 d-block mb-2">Submit</button>
-                            <!-- Tombol untuk membuka modal pop-up -->
-                            <button type="button" class="btn btn-secondary w-100" data-bs-toggle="modal" data-bs-target="#infoModal2">
-                                Informasi Lebih Lanjut
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            
-                <!-- Modal untuk Tugas 2 -->
-                <div class="modal fade" id="infoModal2" tabindex="-1" aria-hidden="true">
-                    <div class="modal-dialog modal-dialog-centered">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="infoModalLabel2">Detail Pengkabelan</h5>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                            </div>
-                            <div class="modal-body" style="color: black;">
-                                <div class="description">
-                                    <strong>Deskripsi:</strong> Bentuk kelompok 5 orang/kelompok, kumpulkan dalam bentuk foto atau pdf.
+                    
+                    <!-- Modal untuk Tugas -->
+                    <div class="modal fade" id="infoModal<%= index %>" tabindex="-1" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title">Detail <%= tugas.judul_tugas %></h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                 </div>
-                                <div class="attachment mt-3">
-                                    <strong>Pengumpulan:</strong>
-                                    <span class="text">Selasa, 01 Oktober 2024 - 23:59</span>
+                                <div class="modal-body" style="color: black;">
+                                    <div class="description">
+                                        <strong>Deskripsi:</strong> <%= tugas.deskripsi_tugas %>
+                                    </div>
+                                    <div class="attachment mt-3">
+                                        <strong>Deadline:</strong>
+                                        <span class="text"><%= tugas.deadline %></span>
+                                    </div>
+                                    <div class="attachment mt-3">
+                                        <strong>Aksi</strong>
+                                        <a href="/dosen/downloadTugas/<%= tugas.file_tugas %>" class="btn btn-primary mr-3">Download <i class="fa-solid fa-download"></i></a>
+                                        <a href="/dosen/<%= id_dosen %>/tugas/<%= id_jadwal %>/edit/<%= tugas.id_tugas %>" class="btn btn-warning mr-3">Edit <i class="fa-solid fa-download"></i></a>
+                                        <a href="/dosen/<%= id_dosen %>/tugas/<%= id_jadwal %>/delete/<%= tugas.id_tugas %>" class="btn btn-danger mr-3">Delete <i class="fa-solid fa-download"></i></a>
+                                    </div>
                                 </div>
-                                <div class="attachment mt-3">
-                                    <strong>Deadline:</strong>
-                                    <span class="text">Selasa, 01 Oktober 2024 - 23:59</span>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
                                 </div>
-                                <div class="attachment mt-3">
-                                    <strong>Lampiran:</strong>
-                                    <a href="/download" class="btn btn-primary mr-3">Download <i class="fa-solid fa-download"></i></a>
-                                </div>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
                             </div>
                         </div>
                     </div>
-                </div>
+                <% }); %>
             </div>
-                                      
+            
+                             
             <!--End Dashboard Content-->
 	  
             <!--start overlay-->

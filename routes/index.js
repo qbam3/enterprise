@@ -56,6 +56,8 @@ router.post('/log', async (req, res)=>{
           
           if (cek) {
               req.session.userId = data[0].id_users;
+              req.session.userRole = data[0].role
+              console.log("Role after login:", req.session.userRole)
               req.flash('success', 'Berhasil login');
               res.redirect('/users');
           } else {

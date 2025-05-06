@@ -38,7 +38,7 @@ class model_prodi{
 
     static async Update(id ,Data){
         return new Promise((resolve, reject) => {
-            connection.query("update prodi set ? where id_prodi = ", + id, Data,(err, rows)=>{
+            connection.query("update prodi set ? where id_prodi = ?", [Data, id],(err, rows)=>{
                 if(err){
                     reject(err)
                 }else{
@@ -50,7 +50,7 @@ class model_prodi{
 
     static async Count(){
         return new Promise((resolve, reject) => {
-            connection.query("SELECT COUNT(id_prodi) AS total_prodi FROM prodi",(err, rows)=>{
+            connection.query("SELECT DISTINCT COUNT(id_prodi) AS total_prodi FROM prodi",(err, rows)=>{
                 if(err){
                     reject(err)
                 }else{
@@ -62,7 +62,7 @@ class model_prodi{
 
     static async Delete(id){
         return new Promise((resolve, reject) => {
-            connection.query("delete from prodi where id_prodi = ", + id,(err, rows)=>{
+            connection.query("delete from prodi where id_prodi = ?", [id],(err, rows)=>{
                 if(err){
                     reject(err)
                 }else{

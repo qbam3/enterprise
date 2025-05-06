@@ -23,6 +23,17 @@ class model_semester{
             })
         })
     }
+    static async Join(){
+        return new Promise((resolve, reject) => {
+            connection.query("SELECT p.*, s.* FROM prodi p left JOIN semester s ON p.id_semester = s.id_semester", (err, rows)=>{
+                if(err){
+                    reject(err)
+                }else{
+                    resolve(rows)
+                }
+            })
+        })
+    }
    
     static async getId(id){
         return new Promise((resolve, reject) => {

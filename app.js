@@ -33,7 +33,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(session({
   cookie: {
-    maxAge: 600000000
+    maxAge: 10 * 60 * 1000
   },
   store: new session.MemoryStore,
   saveUninitialized: true,
@@ -50,7 +50,7 @@ app.use('/materi', materiRouter);
 app.use('/pengumuman', pengumumanRouter);
 app.use('/mahasiswa', mahasiswaRouter);
 app.use('/dosen', dosenRouter);
-// app.use('/absensi', absensiRouter);
+app.use('/landing', absensiRouter);
 app.use('/jadwal', jadwalRouter);
 app.use('/admin', adminRouter);  // dari temanmu
 

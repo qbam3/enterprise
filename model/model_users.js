@@ -49,7 +49,7 @@ class model_users{
 
     static async Update(id ,data){
         return new Promise((resolve, reject) => {
-            connection.query("update users set ? where id_users = ", + id, data,(err, rows)=>{
+            connection.query("update users set ? where id_users = ?", [data, id],(err, rows)=>{
                 if(err){
                     reject(err)
                 }else{
@@ -59,17 +59,18 @@ class model_users{
         })
     }
 
-    static async Delete(id){
+    static async Delete(id) {
         return new Promise((resolve, reject) => {
-            connection.query("delete from user where id_users = ", + id,(err, rows)=>{
-                if(err){
-                    reject(err)
-                }else{
-                    resolve(rows)
+            connection.query("DELETE FROM users WHERE id_users = ?", [id], (err, rows) => {
+                if (err) {
+                    reject(err); 
+                } else {
+                    resolve(rows);
                 }
-            })
-        })
+            });
+        });
     }
+    
 }
 
 module.exports = model_users;

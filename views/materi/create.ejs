@@ -11,40 +11,40 @@
         </div>
         <ul class="sidebar-menu do-nicescrol">
             <li class="sidebar-header">MAIN NAVIGATION</li>
-            <li>
-                <a href="/users">
-                    <i class="zmdi zmdi-view-dashboard"></i> <span>Dashboard</span>
-                </a>
-            </li>
+        <li>
+            <a href="/dosen/<%= id_dosen %>">
+                <i class="zmdi zmdi-view-dashboard"></i> <span>Dashboard</span>
+            </a>
+        </li>
 
-            <li>
-                <a href="/dosen/matakuliah">
-                    <i class="zmdi zmdi-library"></i><span>Daftar Matakuliah</span>
-                </a>
-            </li>
+        <li>
+            <a href="/dosen/<%= id_dosen %>/matakuliah">
+                <i class="zmdi zmdi-library"></i><span>Daftar Matakuliah</span>
+            </a>
+        </li>
 
-            <li>
-                <a href="/dosen/materi">
-                    <i class="fa-solid fa-book"></i></i> <span>Materi</span>
-                </a>
-            </li>
+        <li>
+            <a href="/dosen/<%= id_dosen %>/materi/<%= id_jadwal %>">
+                <i class="fa-solid fa-book"></i></i> <span>Materi</span>
+            </a>
+        </li>
 
-            <li>
-                <a href="/dosen/tugas">
-                    <i class="zmdi zmdi-assignment"></i> <span>Tugas</span>
-                </a>
-            </li>
+        <li>
+            <a href="/dosen/tugas">
+                <i class="zmdi zmdi-assignment"></i> <span>Tugas</span>
+            </a>
+        </li>
 
-            <li>
-                <a href="/dosen/pengumuman">
-                    <i class="fa-solid fa-scroll"></i> <span>Pengumuman</span>
-                </a>
-            </li>
+        <li>
+            <a href="/dosen/<%= id_dosen%>/pengumuman/<%= id_jadwal%>">
+                <i class="fa-solid fa-scroll"></i> <span>Pengumuman</span>
+            </a>
+        </li>
 
-            <li class="sidebar-header">SUB-NAVIGATION</li>
-            <li><a href="/users"><i class="fa-solid fa-backward"></i> <span>Kembali</span></a></li>
+        <li class="sidebar-header">SUB-NAVIGATION</li>
+        <li><a href="/users"><i class="fa-solid fa-backward"></i> <span>Kembali</span></a></li>
 
-        </ul>
+        </ul>    
     </div>
     <!--End sidebar-wrapper-->
 
@@ -113,15 +113,15 @@
         <div class="container-fluid">
 
             <!--Start Dashboard Content-->
-            <a href="/dosen/materi" class="btn btn-success">Kembali</a>
-            <form>
+            <a href="/dosen/<%= id_dosen%>/materi/<%= id_jadwal %>" class="btn btn-success">Kembali</a>
+            <form action="/dosen/<%= id_dosen%>/materi/<%= id_jadwal %>/submit" enctype="multipart/form-data" method="post">
                 <div class="mb-3">
                   <label for="exampleInputEmail1" class="form-label">Judul</label>
-                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                  <input type="text" name="judul_materi" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
                 </div>
                 <div class="mb-3">
                   <label for="exampleInputPassword1" class="form-label">File Materi</label>
-                  <input type="file" class="form-control" id="exampleInputPassword1">
+                  <input type="file" name="file_materi" class="form-control" id="exampleInputPassword1">
                 </div>
                 <button type="submit" class="btn btn-primary">Submit</button>
             </form>

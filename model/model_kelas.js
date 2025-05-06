@@ -38,7 +38,7 @@ class model_kelas{
 
     static async Update(id ,Data){
         return new Promise((resolve, reject) => {
-            connection.query("update class set ? where id_kelas = ", + id, Data,(err, rows)=>{
+            connection.query("update class set ? where id_kelas = ?",  [Data, id],(err, rows)=>{
                 if(err){
                     reject(err)
                 }else{
@@ -59,11 +59,32 @@ class model_kelas{
             })
         })
     }
-
+    static async joinGreat(){
+        return new Promise((resolve, reject) => {
+            connection.query("SELECT dosen.nama_dosen, matakuliah.nama_mata_kuliah, ruangan.kelas, jadwal.jadwal_kuliah, mahasiswa.id_kelas, mahasiswa.id_mahasiswa, jadwal.id_jadwal, jadwal.start_absensi, jadwal.end_absensi FROM dosen left JOIN jadwal ON dosen.id_dosen = jadwal.id_dosen left JOIN matakuliah ON jadwal.id_matakuliah = matakuliah.id_matakuliah left JOIN ruangan ON jadwal.id_jadwal = ruangan.id_jadwal left join mahasiswa on mahasiswa.id_kelas = jadwal.id_kelas where mahasiswa.id_mahasiswa = ?",(err, rows)=>{
+                if(err){
+                    reject(err)
+                }else{
+                    resolve(rows)
+                }
+            })
+        })
+    }
+    static async Join(){
+        return new Promise((resolve, reject) => {
+            connection.query("SELECT p.prodi, s.semester, k.* FROM prodi p left JOIN semester s ON p.id_semester = s.id_semester left join class k on k.id_prodi = p.id_prodi", (err, rows)=>{
+                if(err){
+                    reject(err)
+                }else{
+                    resolve(rows)
+                }
+            })
+        })
+    }
 
     static async Delete(id){
         return new Promise((resolve, reject) => {
-            connection.query("delete from class where id_kelas = ", + id,(err, rows)=>{
+            connection.query("delete from class where id_kelas = ?", [id],(err, rows)=>{
                 if(err){
                     reject(err)
                 }else{

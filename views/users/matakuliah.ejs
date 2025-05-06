@@ -5,41 +5,42 @@
     <div id="sidebar-wrapper" data-simplebar="" data-simplebar-auto-hide="true">
         <div class="brand-logo">
             <a href="/users">
-            <img src="/images/Logo_PENS.png" class="logo-icon" alt="logo icon">
+            <img src="/images/logo_editi-removebg-preview.png" class="logo-icon" alt="logo icon">
             <h5 class="logo-text">E-DITI</h5>
             </a>
         </div>
         <ul class="sidebar-menu do-nicescrol">
             <li class="sidebar-header">MAIN NAVIGATION</li>
             <li>
-                <a href="/users">
+                <a href="/mahasiswa/<%= id_mahasiswa %>">
                     <i class="zmdi zmdi-view-dashboard"></i> <span>Dashboard</span>
                 </a>
             </li>
 
             <li>
-                <a href="/mahasiswa/matakuliah">
+                <a href="/mahasiswa/<%= id_mahasiswa %>/matakuliah/<%= id_jadwal %>">
                     <i class="zmdi zmdi-library"></i><span>Daftar Matakuliah</span>
                 </a>
             </li>
 
             <li>
-                <a href="/mahasiswa/materi">
+                <a href="/mahasiswa/<%= id_mahasiswa %>/materi/<%= id_jadwal %>">
                     <i class="fa-solid fa-book"></i></i> <span>Materi</span>
                 </a>
             </li>
 
             <li>
-                <a href="/mahasiswa/tugas">
+                <a href="/mahasiswa/<%= id_mahasiswa %>/tugas/<%= id_jadwal %>">
                     <i class="zmdi zmdi-assignment"></i> <span>Tugas</span>
                 </a>
             </li>
 
-            <li>
-                <a href="/mahasiswa/pengumuman">
-                    <i class="fa-solid fa-scroll"></i> <span>Pengumuman</span>
-                </a>
-            </li>
+        <li>
+            <a href="/mahasiswa/<%= id_mahasiswa %>/pengumuman/<%= id_jadwal %>">
+                <i class="fa-solid fa-scroll"></i> <span>Pengumuman</span>
+            </a>
+        </li>
+
 
             <li class="sidebar-header">SUB-NAVIGATION</li>
             <li><a href="/users"><i class="fa-solid fa-backward"></i> <span>Kembali</span></a></li>
@@ -84,13 +85,13 @@
                 </li> -->
                 <li class="nav-item">
                     <a class="nav-link dropdown-toggle dropdown-toggle-nocaret" data-toggle="dropdown" href="#">
-                        <span class="user-profile"><img src="/images/Logo_PENS.png" class="img-circle" alt="user avatar"></span>
+                        <span class="user-profile"><img src="/images/logo_editi-removebg-preview.png" class="img-circle" alt="user avatar"></span>
                     </a>
                     <ul class="dropdown-menu dropdown-menu-right">
                         <li class="dropdown-item user-details">
                             <a href="javaScript:void();">
                                 <div class="media">
-                                    <div class="avatar"><img class="align-self-start mr-3" src="/images/Logo_PENS.png" alt="user avatar"></div>
+                                    <div class="avatar"><img class="align-self-start mr-3" src="/images/logo_editi-removebg-preview.png" alt="user avatar"></div>
                                     <div class="media-body">
                                     <h6 class="mt-2 user-title">Sarajhon Mccoy</h6>
                                     <p class="user-subtitle">mccoy@example.com</p>
@@ -114,7 +115,7 @@
     
             <!--Start Dashboard Content-->
             <div class="row">
-            <% getJoin.forEach((item) => { %> <!-- Mulai perulangan -->
+            <% dataJadwalJoin.forEach((item) => { %> <!-- Mulai perulangan -->
                 <div class="col-sm-6 mb-3 mb-sm-0">
                   <div class="card">
                     <div class="card-body">
@@ -122,7 +123,7 @@
                       <p class="card-text">Dosen: <%= item.nama_dosen %></p> 
                       <p class="card-text">Ruangan: <%= item.kelas %></p> 
                       <p class="card-text">Jadwal: <%= item.jadwal_kuliah %>, <%= start_absen %> - <%= end_absen %></p> 
-                      <a href="/mahasiswa/jadwal/<%= item.id_jadwal %>" class="btn btn-primary">Lanjut</a>
+                      <a href="/mahasiswa/<%=   id_mahasiswa %>/matakuliah/<%= item.id_jadwal %>" class="btn btn-primary">Lanjut</a>
                     </div>
                   </div>
                 </div>

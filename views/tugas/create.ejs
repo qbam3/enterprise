@@ -12,38 +12,37 @@
         <ul class="sidebar-menu do-nicescrol">
             <li class="sidebar-header">MAIN NAVIGATION</li>
             <li>
-                <a href="/users">
+                <a href="/dosen/<%= id_dosen %>">
                     <i class="zmdi zmdi-view-dashboard"></i> <span>Dashboard</span>
                 </a>
             </li>
 
             <li>
-                <a href="/dosen/matakuliah">
+                <a href="/dosen/<%= id_dosen %>/matakuliah">
                     <i class="zmdi zmdi-library"></i><span>Daftar Matakuliah</span>
                 </a>
             </li>
 
             <li>
-                <a href="/dosen/materi">
+                <a href="/dosen/<%= id_dosen %>/materi/<%= id_jadwal %>">
                     <i class="fa-solid fa-book"></i></i> <span>Materi</span>
                 </a>
             </li>
 
             <li>
-                <a href="/dosen/tugas">
+                <a href="/dosen/<%= id_dosen %>/tugas/<%= id_jadwal %>">
                     <i class="zmdi zmdi-assignment"></i> <span>Tugas</span>
                 </a>
             </li>
 
             <li>
-                <a href="/dosen/pengumuman">
+                <a href="/dosen/<%= id_dosen%>/pengumuman/<%= id_jadwal%>">
                     <i class="fa-solid fa-scroll"></i> <span>Pengumuman</span>
                 </a>
             </li>
 
             <li class="sidebar-header">SUB-NAVIGATION</li>
-            <li><a href="/users"><i class="fa-solid fa-backward"></i> <span>Kembali</span></a></li>
-
+            <li><a href="/dosen/<%= id_dosen %>/matakuliah"><i class="fa-solid fa-backward"></i> <span>Kembali</span></a></li>
         </ul>
     </div>
     <!--End sidebar-wrapper-->
@@ -113,23 +112,23 @@
         <div class="container-fluid">
 
             <!--Start Dashboard Content-->
-            <a href="/dosen/tugas" class="btn btn-success">Kembali</a>
-            <form>
+            <a href="/dosen/<%= id_dosen %>/tugas/<%= id_jadwal %>" class="btn btn-success">Kembali</a>
+            <form action="/dosen/<%= id_dosen %>/tugas/<%= id_jadwal %>/submit" enctype="multipart/form-data" method="post">
                 <div class="mb-3">
                   <label for="exampleInputEmail1" class="form-label">Judul</label>
-                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                  <input type="text" name="judul_tugas" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
                 </div>
                 <div class="mb-3">
                     <label for="exampleFormControlTextarea1" class="form-label">Deskripsi</label>
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                    <textarea class="form-control" name="deskripsi_tugas" id="exampleFormControlTextarea1" rows="3"></textarea>
                 </div>
                 <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">Deadline</label>
-                    <input type="datetime" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    <input type="datetime-local" name="deadline" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
                 </div>
                 <div class="mb-3">
                   <label for="exampleInputPassword1" class="form-label">File Materi</label>
-                  <input type="file" class="form-control" id="exampleInputPassword1">
+                  <input type="file" name="file_tugas" class="form-control" id="exampleInputPassword1">
                 </div>
                 <button type="submit" class="btn btn-primary">Submit</button>
             </form>

@@ -1,0 +1,130 @@
+<%- include('../partials/__head') %>
+
+    <!-- start loader -->
+    <div id="pageloader-overlay" class="visible incoming"><div class="loader-wrapper-outer"><div class="loader-wrapper-inner" ><div class="loader"></div></div></div></div>
+    <!-- end loader -->
+
+    <!-- Start wrapper-->
+    <div id="wrapper">
+        <div id="sidebar-wrapper" data-simplebar="" data-simplebar-auto-hide="true">
+            <div class="brand-logo">
+                <a href="index.html">
+                <img src="/dashtreme/assets/images/logo-icon.png" class="logo-icon" alt="logo icon">
+                <h5 class="logo-text">E-DITI</h5>
+                </a>
+            </div>
+            <ul class="sidebar-menu do-nicescrol">
+                <li class="sidebar-header">MAIN NAVIGATION</li>
+                <li>
+                    <a href="/admin">
+                    <i class="zmdi zmdi-view-dashboard"></i> <span>Dashboard</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/admin/submit">
+                    <i class="zmdi zmdi-format-list-bulleted"></i> <span>Buat Dosen</span>
+                    </a>
+                </li>
+    
+                <li>
+                    <a href="/admin/submitM">
+                    <i class="zmdi zmdi-format-list-bulleted"></i> <span>Buat Mahasiswa</span>
+                    </a>
+                </li>
+    
+            </ul>
+        </div>
+        <div class="card card-authentication1 mx-auto my-2">
+            <div class="card-body">
+                <div class="card-content p-2">
+                    <!-- <div class="text-center">
+                        <img src="/images/Logo_PENS.png" alt="logo icon">
+                    </div> -->
+                    <div class="card-title text-uppercase text-center py-3">Edit Kelas</div>
+                    <form action="/admin/<%= id_users %>/kelas/<%= id_kelas %>/update" method="post">
+                        <div class="form-group">
+                            <label for="exampleSelectProdi" class="sr-only">Prodi</label>
+                            <div class="position-relative has-icon-right">
+                                <select name="nama_kelas" class="form-control input-shadow" id="exampleSelectProdi">
+                                    <option value="A">A</option>
+                                    <option value="B">B</option>
+                                    <option value="C">C</option>
+                                    <option value="D">D</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="exampleInputEmailId" class="sr-only">Id Semester</label>
+                            <div class="position-relative has-icon-right">
+                                <select name="id_prodi" class="form-control input-shadow" required id="">
+                                    <%  for(let i=0; i<dataSemester.length; i++){ %>
+                                        <option value="<%= dataSemester[i].id_prodi%>"><%= dataSemester[i].prodi %></option>
+                                    <% } %>
+                                </select>
+                            </div>
+                            <br>
+                        <button type="submit" class="btn btn-light btn-block waves-effect waves-light">Tambahkan</button>
+                        
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+     <!--Start Back To Top Button-->
+    <a href="javaScript:void();" class="back-to-top"><i class="fa fa-angle-double-up"></i> </a>
+    <!--End Back To Top Button-->
+	
+	<!--start color switcher-->
+   <div class="right-sidebar">
+    <div class="switcher-icon">
+      <i class="zmdi zmdi-settings zmdi-hc-spin"></i>
+    </div>
+    <div class="right-sidebar-content">
+
+      <p class="mb-0">Gaussion Texture</p>
+      <hr>
+      
+      <ul class="switcher">
+        <li id="theme1"></li>
+        <li id="theme2"></li>
+        <li id="theme3"></li>
+        <li id="theme4"></li>
+        <li id="theme5"></li>
+        <li id="theme6"></li>
+      </ul>
+
+      <p class="mb-0">Gradient Background</p>
+      <hr>
+      
+      <ul class="switcher">
+        <li id="theme7"></li>
+        <li id="theme8"></li>
+        <li id="theme9"></li>
+        <li id="theme10"></li>
+        <li id="theme11"></li>
+        <li id="theme12"></li>
+		<li id="theme13"></li>
+        <li id="theme14"></li>
+        <li id="theme15"></li>
+      </ul>
+      
+     </div>
+   </div>
+  <!--end color switcher-->
+	
+	</div><!--wrapper-->
+	
+  <!-- Bootstrap core JavaScript-->
+  <script src="/dashtreme/assets/js/jquery.min.js"></script>
+  <script src="/dashtreme/assets/js/popper.min.js"></script>
+  <script src="/dashtreme/assets/js/bootstrap.min.js"></script>
+	
+  <!-- sidebar-menu js -->
+  <script src="/dashtreme/assets/js/sidebar-menu.js"></script>
+  
+  <!-- Custom scripts -->
+  <script src="/dashtreme/assets/js/app-script.js"></script>
+  
+</body>
+</html>

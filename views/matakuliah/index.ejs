@@ -13,39 +13,58 @@
         <ul class="sidebar-menu do-nicescrol">
             <li class="sidebar-header">MAIN NAVIGATION</li>
             <li>
-                <a href="/users">
-                <i class="zmdi zmdi-view-dashboard"></i> <span>Dashboard</span>
+                <a href="/admin/<%= id_users %>">
+                <i class="fa fa-dashboard"></i> <span>Dashboard</span>
+                </a>
+            </li>
+            <li>
+                <a href="/admin/<%= id_users %>/register">
+                    <i class="fa-solid fa-user-circle"></i> <span>Account</span>
+                </a>
+            </li>
+
+
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="dropdownMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="fa-solid fa-user"></i><span> User </span>
+                </a>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenu">
+                    <a class="dropdown-item" href="/admin/<%= id_users %>/dosen">
+                        <i class="fa-solid fa-user"></i> Dosen
+                    </a>
+                    <a class="dropdown-item" href="/admin/<%= id_users %>/mahasiswa">
+                        <i class="fa-solid fa-user"></i> Mahasiswa
+                    </a>
+                </div>
+            </li>
+            <li>
+                <a href="/admin/<%= id_users %>/matakuliah">
+                    <i class="fa-solid fa-book-open-reader"></i><span>Matakuliah</span>
                 </a>
             </li>
 
             <li>
-                <a href="/dosen/materi">
-                <i class="zmdi zmdi-invert-colors"></i> <span>Materi</span>
+                <a href="/admin/<%= id_users %>/jadwal">
+                    <i class="fa-solid fa-calendar"></i> <span>Jadwal</span>
                 </a>
             </li>
 
             <li>
-                <a href="/dosen/tugas">
-                <i class="zmdi zmdi-format-list-bulleted"></i> <span>Tugas</span>
+                <a href="/admin/<%= id_users %>/prodi">
+                    <i class="fa-solid fa-graduation-cap"></i><span>Prodi</span>
                 </a>
             </li>
 
             <li>
-                <a href="/dosen/pengumuman">
-                <i class="zmdi zmdi-grid"></i> <span>Pengumuman</span>
+                <a href="/admin/<%= id_users %>/kelas">
+                    <i class="fa-solid fa-door-open"></i></i><span>Kelas</span>
                 </a>
             </li>
 
-            <li>
-                <a href="/dosen/absensi">
-                <i class="zmdi zmdi-grid"></i> <span>Absensi</span>
-                </a>
-            </li>
+            <li class="sidebar-header">SUB-NAVIGATION</li>
+            <li><a href="/logout"><i class="fas fa-home"></i><span>Logout</span></a></li>
+        </ul>
 
-            <li class="sidebar-header">LABELS</li>
-            <li><a href="/admin"><i class="zmdi zmdi-home text-danger"></i> <span>Kembali</span></a></li>
-
-            </ul>
         
         </div>
         <!--End sidebar-wrapper-->
@@ -115,113 +134,30 @@
         <div class="container-fluid">
 
             <!--Start Dashboard Content-->
+            <a href="/admin/<%= id_users %>/matakuliah/create" class="btn btn-success mb-3">Add Data <i class="fas fa-plus"></i></a>
             <div class="card mt-3 mb-3">
                 <div class="card-content">
                     <div class="row row-group m-0">
-                        <div class="col-12 col-lg-6 col-xl-12 border-light">
-                            <div class="card-body">
-                                <h5 class="text-white mb-0">Konsep Jaringan <span class="float-right"><i class="fa fa-solid fa-book"></i></span></h5>  
-                                <p class="mb-0 text-white small-font">Dosen: Pak Joko </p>
-                                <p class="mb-0 text-white small-font">Dosen: Pak Joko </p>
-                                <p class="mb-0 text-white small-font">Dosen: Pak Joko </p>
-                                <td><a href="/dosen/matakuliah/detail" class="btn btn-primary">Lanjut</a></td>
+                        <% dataMatakuliah.forEach(function(data) { %>
+                            <% if (data.nama_mata_kuliah && data.prodi && data.nama_kelas) { %>
+                            <div class="col-12 col-lg-6 col-xl-12 border-light">
+                                <div class="card-body">
+                                    <h5 class="text-white mb-0">
+                                        <%= data.nama_mata_kuliah %>
+                                    </h5>
+                                    <p class="text-white mb-0">
+                                        <%= data.prodi %> <%= data.nama_kelas %> <%= data.semester %>
+                                    </p>
+                                    <br>
+                                    <td><a href="/admin/<%= id_users %>/matakuliah/<%= data.id_matakuliah %>/edit" class="btn btn-warning">Edit</a></td>
+                                    <td><a href="/admin/<%= id_users %>/matakuliah/<%= data.id_matakuliah %>/delete" class="btn btn-danger">Delete</a></td>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="card-content">
-                    <div class="row row-group m-0">
-                        <div class="col-12 col-lg-6 col-xl-12 border-light">
-                            <div class="card-body">
-                                <h5 class="text-white mb-0">Konsep Jaringan <span class="float-right"><i class="fa fa-solid fa-book"></i></span></h5>  
-                                <p class="mb-0 text-white small-font">Dosen: Pak Joko </p>
-                                <p class="mb-0 text-white small-font">Dosen: Pak Joko </p>
-                                <p class="mb-0 text-white small-font">Dosen: Pak Joko </p>
-                                <td><a href="/dosen/matakuliah/detail" class="btn btn-primary">Lanjut</a></td>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="card-content">
-                    <div class="row row-group m-0">
-                        <div class="col-12 col-lg-6 col-xl-12 border-light">
-                            <div class="card-body">
-                                <h5 class="text-white mb-0">Konsep Jaringan <span class="float-right"><i class="fa fa-solid fa-book"></i></span></h5>  
-                                <p class="mb-0 text-white small-font">Dosen: Pak Joko </p>
-                                <p class="mb-0 text-white small-font">Dosen: Pak Joko </p>
-                                <p class="mb-0 text-white small-font">Dosen: Pak Joko </p>
-                                <td><a href="/dosen/matakuliah/detail" class="btn btn-primary">Lanjut</a></td>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="card-content">
-                    <div class="row row-group m-0">
-                        <div class="col-12 col-lg-6 col-xl-12 border-light">
-                            <div class="card-body">
-                                <h5 class="text-white mb-0">Konsep Jaringan <span class="float-right"><i class="fa fa-solid fa-book"></i></span></h5>  
-                                <p class="mb-0 text-white small-font">Dosen: Pak Joko </p>
-                                <p class="mb-0 text-white small-font">Dosen: Pak Joko </p>
-                                <p class="mb-0 text-white small-font">Dosen: Pak Joko </p>
-                                <td><a href="/dosen/matakuliah/detail" class="btn btn-primary">Lanjut</a></td>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="card-content">
-                    <div class="row row-group m-0">
-                        <div class="col-12 col-lg-6 col-xl-12 border-light">
-                            <div class="card-body">
-                                <h5 class="text-white mb-0">Konsep Jaringan <span class="float-right"><i class="fa fa-solid fa-book"></i></span></h5>  
-                                <p class="mb-0 text-white small-font">Dosen: Pak Joko </p>
-                                <p class="mb-0 text-white small-font">Dosen: Pak Joko </p>
-                                <p class="mb-0 text-white small-font">Dosen: Pak Joko </p>
-                                <td><a href="/dosen/matakuliah/detail" class="btn btn-primary">Lanjut</a></td>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="card-content">
-                    <div class="row row-group m-0">
-                        <div class="col-12 col-lg-6 col-xl-12 border-light">
-                            <div class="card-body">
-                                <h5 class="text-white mb-0">Konsep Jaringan <span class="float-right"><i class="fa fa-solid fa-book"></i></span></h5>  
-                                <p class="mb-0 text-white small-font">Dosen: Pak Joko </p>
-                                <p class="mb-0 text-white small-font">Dosen: Pak Joko </p>
-                                <p class="mb-0 text-white small-font">Dosen: Pak Joko </p>
-                                <td><a href="/dosen/matakuliah/detail" class="btn btn-primary">Lanjut</a></td>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="card-content">
-                    <div class="row row-group m-0">
-                        <div class="col-12 col-lg-6 col-xl-12 border-light">
-                            <div class="card-body">
-                                <h5 class="text-white mb-0">Konsep Jaringan <span class="float-right"><i class="fa fa-solid fa-book"></i></span></h5>  
-                                <p class="mb-0 text-white small-font">Dosen: Pak Joko </p>
-                                <p class="mb-0 text-white small-font">Dosen: Pak Joko </p>
-                                <p class="mb-0 text-white small-font">Dosen: Pak Joko </p>
-                                <td><a href="/dosen/matakuliah/detail" class="btn btn-primary">Lanjut</a></td>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="card-content">
-                    <div class="row row-group m-0">
-                        <div class="col-12 col-lg-6 col-xl-12 border-light">
-                            <div class="card-body">
-                                <h5 class="text-white mb-0">Konsep Jaringan <span class="float-right"><i class="fa fa-solid fa-book"></i></span></h5>  
-                                <p class="mb-0 text-white small-font">Dosen: Pak Joko </p>
-                                <p class="mb-0 text-white small-font">Dosen: Pak Joko </p>
-                                <p class="mb-0 text-white small-font">Dosen: Pak Joko </p>
-                                <td><a href="/dosen/matakuliah/detail" class="btn btn-primary">Lanjut</a></td>
-                            </div>
-                        </div>
+                            <% } %>
+                        <% }) %>
                     </div>
                 </div>
             </div>
-            
 
             <!--End Dashboard Content-->
 	  

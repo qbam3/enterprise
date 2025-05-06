@@ -12,38 +12,24 @@
         <ul class="sidebar-menu do-nicescrol">
             <li class="sidebar-header">MAIN NAVIGATION</li>
             <li>
-                <a href="/users">
-                    <i class="zmdi zmdi-view-dashboard"></i> <span>Dashboard</span>
+                <a href="/dosen/<%= id_dosen %>">
+                <i class="zmdi zmdi-view-dashboard"></i> <span>Dashboard</span>
                 </a>
             </li>
 
             <li>
-                <a href="/dosen/matakuliah">
-                    <i class="zmdi zmdi-library"></i><span>Daftar Matakuliah</span>
+                <a href="/dosen/<%= id_dosen %>/matakuliah">
+                    <i class="zmdi zmdi-library"></i><span>Matakuliah</span>
                 </a>
             </li>
 
             <li>
-                <a href="/dosen/materi">
-                    <i class="fa-solid fa-book"></i></i> <span>Materi</span>
+                <a href="/dosen/<%= id_dosen %>/jadwal">
+                    <i class="fa-regular fa-calendar"></i> <span>Jadwal</span>
                 </a>
             </li>
-
-            <li>
-                <a href="/dosen/tugas">
-                    <i class="zmdi zmdi-assignment"></i> <span>Tugas</span>
-                </a>
-            </li>
-
-            <li>
-                <a href="/dosen/pengumuman">
-                    <i class="fa-solid fa-scroll"></i> <span>Pengumuman</span>
-                </a>
-            </li>
-
             <li class="sidebar-header">SUB-NAVIGATION</li>
-            <li><a href="/users"><i class="fa-solid fa-backward"></i> <span>Kembali</span></a></li>
-
+            <li><a href="/logout"><i class="fas fa-home"></i><span>Logout</span></a></li>
         </ul>
     </div>
     <!--End sidebar-wrapper-->
@@ -114,20 +100,28 @@
 
         <!--Start Dashboard Content-->
         <div class="row">
-        <% getJoin.forEach((item) => { %> <!-- Mulai perulangan -->
-            <div class="col-sm-6 mb-3 mb-sm-0">
-              <div class="card">
-                <div class="card-body">
-                  <h5 class="card-title"><%= item.nama_mata_kuliah %></h5> 
-                  <p class="card-text">Dosen: <%= item.nama_dosen %></p> 
-                  <p class="card-text">Ruangan: <%= item.kelas %></p> 
-                  <p class="card-text">Jadwal: <%= item.jadwal_kuliah %></p> 
-                  <a href="/dosen/jadwal/<%= item.id_jadwal %>" class="btn btn-primary">Lanjut</a>
+            <% for (let i = 0; i < dataMatakuliah.length; i++) { %>
+                <div class="col-sm-6 mb-3 mb-sm-0">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title"><%= dataMatakuliah[i].nama_mata_kuliah %></h5> 
+                            <p class="card-text">Dosen: <%= dataMatakuliah[i].nama_dosen %></p> 
+                            <p class="card-text">Ruangan: <%= dataMatakuliah[i].kelas %></p> 
+                            <% 
+                                let startAbsensi = dataMatakuliah[i].start_absensi.slice(0, 5);
+                                let endAbsensi = dataMatakuliah[i].end_absensi.slice(0, 5); 
+                            %>
+                            <p class="card-text">
+                                Jadwal: <%= dataMatakuliah[i].jadwal_kuliah %>, 
+                                <%= startAbsensi %> - <%= endAbsensi %>
+                            </p>
+                            <a href="/dosen/<%= id_dosen %>/matakuliah/<%= dataMatakuliah[i].id_jadwal %>" class="btn btn-primary">Lanjut</a> 
+                        </div>
+                    </div>
                 </div>
-              </div>
-            </div>
-        <% }); %> 
+            <% } %>
         </div>
+        
     </div>
 </div>
 

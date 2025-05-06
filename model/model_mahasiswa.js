@@ -14,7 +14,31 @@ class model_mahasiswa{
     }
     static async store(Data){
         return new Promise((resolve, reject) => {
-            connection.query("insert into mahasiswa set ?", Data, (err, rows)=>{
+            connection.query("insert into mahasiswa set ?", [Data], (err, rows)=>{
+                if(err){
+                    reject(err)
+                }else{
+                    resolve(rows)
+                }
+            })
+        })
+    }
+
+    static async getIdUsers(id){
+        return new Promise((resolve, reject) => {
+            connection.query('select * from mahasiswa where id_users = ?', [id], (err, rows)=>{
+                if(err){
+                    reject(err)
+                }else{
+                    resolve(rows)
+                }
+            })
+        })
+    }
+
+    static async joinMahasiswa(id_jadwal){
+        return new Promise((resolve, reject) => {
+            connection.query("SELECT mahasiswa.nama_mahasiswa, mahasiswa.nrp, mahasiswa.jenis_kelamin FROM mahasiswa left JOIN jadwal ON mahasiswa.id_kelas = jadwal.id_kelas where jadwal.id_jadwal = ?", [id_jadwal],(err, rows)=>{
                 if(err){
                     reject(err)
                 }else{
@@ -26,7 +50,7 @@ class model_mahasiswa{
 
     static async getId(id_mahasiswa){
         return new Promise((resolve, reject) => {
-            connection.query('select * from mahasiswa where id_mahasiswa = ?' [id_mahasiswa], (err, rows)=>{
+            connection.query('select * from mahasiswa where id_mahasiswa = ?', [id_mahasiswa], (err, rows)=>{
                 if(err){
                     reject(err)
                 }else{

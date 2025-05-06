@@ -60,7 +60,7 @@ class model_absensi{
         })
     }
 
-    // Contoh query dengan JOIN
+   
 static async getAbsensiMahasiswa(id_absensi, id_mahasiswa) {
     return new Promise((resolve, reject) => {
         connection.query(
@@ -106,25 +106,55 @@ static async getAbsensiMahasiswa(id_absensi, id_mahasiswa) {
             });
         }
 
-        static async isAbsensiOpen(id_absensi) {
+        static async isAbsensiOpen(id_jadwal) {
             return new Promise((resolve, reject) => {
-                const query = `
-                    SELECT batas_absensi, id_jadwal 
-                    FROM absensi 
-                    WHERE id_absensi = ?`;
-        
-                connection.query(query, [id_absensi], (err, rows) => {
+                connection.query(`SELECT status, id_absensi FROM absensi WHERE id_jadwal = ? and status = 'buka' order by id_jadwal desc`, 
+                    [id_jadwal], 
+                    (err, rows) => {
+                        if (err) {
+                            reject(err);
+                        } else {
+                            resolve(rows[0]);
+                        }
+                    }
+                );
+            });
+        }
+
+        static async getStatusPresensi(id_jadwal) {
+            return new Promise((resolve, reject) => {
+                connection.query(
+                    `SELECT status, id_absensi FROM absensi WHERE id_jadwal = ? ORDER BY history_pembuatan DESC LIMIT 1`,
+                    [id_jadwal],
+                    (err, rows) => {
+                        if (err) {
+                            reject(err);
+                        } else {
+                            resolve(rows);
+                        }
+                    }
+                );
+            });
+        }
+
+        static async getHistoriPresensi(id_jadwal) {
+            return new Promise((resolve, reject) => {
+                const query = `SELECT * FROM absensi WHERE id_jadwal = ? ORDER BY history_pembuatan DESC`;
+                connection.query(query, [id_jadwal], (err, rows) => {
                     if (err) {
                         reject(err);
                     } else {
-                        if (rows.length > 0) {
-                            const batasAbsensi = rows[0].batas_absensi; // Ambil batas_absensi dari baris pertama
-                            const id_jadwal = rows[0].id_jadwal; // Ambil id_jadwal
-                            resolve({ batasAbsensi, id_jadwal }); // Resolve dengan objek yang berisi batas_absensi dan id_jadwal
-                        } else {
-                            resolve(null); // Resolve dengan null jika tidak ada catatan ditemukan
-                        }
+                        resolve(rows);
                     }
+                });
+            });
+        }
+        
+        static async tutup(id_jadwal, status) {
+            return new Promise((resolve, reject) => {
+                connection.query(`UPDATE absensi SET status = ? WHERE id_jadwal = ?`, [status, id_jadwal], (err, result) => {
+                    if (err) reject(err);
+                    resolve(result);
                 });
             });
         }

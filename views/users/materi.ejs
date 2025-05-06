@@ -12,34 +12,35 @@
         <ul class="sidebar-menu do-nicescrol">
             <li class="sidebar-header">MAIN NAVIGATION</li>
             <li>
-                <a href="/users">
+                <a href="/mahasiswa/<%= id_mahasiswa %>">
                     <i class="zmdi zmdi-view-dashboard"></i> <span>Dashboard</span>
                 </a>
             </li>
 
             <li>
-                <a href="/mahasiswa/matakuliah">
+                <a href="/mahasiswa/<%= id_mahasiswa %>/matakuliah">
                     <i class="zmdi zmdi-library"></i><span>Daftar Matakuliah</span>
                 </a>
             </li>
 
             <li>
-                <a href="/mahasiswa/materi">
+                <a href="/mahasiswa/<%= id_mahasiswa %>/materi/<%= id_jadwal %>">
                     <i class="fa-solid fa-book"></i></i> <span>Materi</span>
                 </a>
             </li>
 
             <li>
-                <a href="/mahasiswa/tugas">
+                <a href="/mahasiswa/<%= id_mahasiswa %>/tugas/<%= id_jadwal %>">
                     <i class="zmdi zmdi-assignment"></i> <span>Tugas</span>
                 </a>
             </li>
 
-            <li>
-                <a href="/mahasiswa/pengumuman">
-                    <i class="fa-solid fa-scroll"></i> <span>Pengumuman</span>
-                </a>
-            </li>
+        <li>
+            <a href="/mahasiswa/<%= id_mahasiswa %>/pengumuman/<%= id_jadwal %>">
+                <i class="fa-solid fa-scroll"></i> <span>Pengumuman</span>
+            </a>
+        </li>
+
 
             <li class="sidebar-header">SUB-NAVIGATION</li>
             <li><a href="/users"><i class="fa-solid fa-backward"></i> <span>Kembali</span></a></li>
@@ -114,43 +115,17 @@
 
             <!--Start Dashboard Content-->
             <div class="row">
-                <div class="col-sm-6 mb-3 mb-sm-0">
-                  <div class="card">
-                    <div class="card-body">
-                      <h5 class="card-title">TC/IP Physical Layer</h5>
-                      <span class="text-muted d-block mb-3">Upload: 13 Agustus 2024</span>
-                      <a href="/download" class="btn btn-primary mr-3">Download <i class="fa-solid fa-download"></i></a>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-sm-6">
-                  <div class="card">
-                    <div class="card-body">
-                      <h5 class="card-title">Pengkabelan</h5>
-                      <span class="text-muted d-block mb-3">Upload: 13 Agustus 2024</span>
-                      <a href="/download" class="btn btn-primary mr-3">Download <i class="fa-solid fa-download"></i></a>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-sm-6">
-                    <div class="card">
-                      <div class="card-body">
-                        <h5 class="card-title">Normalisasi Data</h5>
-                        <span class="text-muted d-block mb-3">Upload: 13 Agustus 2024</span>
-                        <a href="/download" class="btn btn-primary mr-3">Download <i class="fa-solid fa-download"></i></a>
-                      </div>
-                    </div>
-                </div>
-                <div class="col-sm-6">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Perancangan Database</h5>
-                            <span class="text-muted d-block mb-3">Upload: 13 Agustus 2024</span>
-                            <a href="/download" class="btn btn-primary mr-3">Download <i class="fa-solid fa-download"></i></a>
+                <% dataMateri.forEach(function(materi) { %>
+                    <div class="col-sm-6 mb-3 mb-sm-0">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title"><%= materi.judul_materi %></h5>
+                                <span class="text-muted d-block mb-3">Upload: <%= materi.upload %></span>
+                                <a href="/dosen/download/<%= materi.file_materi %>" class="btn btn-primary mr-3">Download <i class="fa-solid fa-download"></i></a>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </div>  
+                <% }); %>
             </div>
             <!--End Dashboard Content-->
 	  

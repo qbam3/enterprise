@@ -1,280 +1,701 @@
-<%- include('../partials/__head') %>
- 
-    <!-- Start wrapper-->
-    <div id="wrapper">
-        <div id="sidebar-wrapper" data-simplebar="" data-simplebar-auto-hide="true">
-            <div class="brand-logo">
-                <a href="/users">
-                <img src="/dashtreme/assets/images/logo-icon.png" class="logo-icon" alt="logo icon">
-                <h5 class="logo-text">E-DITI</h5>
-                </a>
-            </div>
-            <ul class="sidebar-menu do-nicescrol">
-                <li class="sidebar-header">MAIN NAVIGATION</li>
-                <li>
-                    <a href="/users">
-                    <i class="zmdi zmdi-view-dashboard"></i> <span>Dashboard</span>
-                    </a>
-                </li>
-    
-                <li>
-                    <a href="/dosen/matakuliah">
-                    <i class="zmdi zmdi-invert-colors"></i> <span>Matakuliah</span>
-                    </a>
-                </li>
-    
-                <li>
-                    <a href="/dosen/materi">
-                    <i class="zmdi zmdi-invert-colors"></i> <span>Materi</span>
-                    </a>
-                </li>
-    
-                <li>
-                    <a href="/dosen/tugas">
-                    <i class="zmdi zmdi-format-list-bulleted"></i> <span>Tugas</span>
-                    </a>
-                </li>
-    
-                <li>
-                    <a href="/dosen/pengumuman">
-                    <i class="zmdi zmdi-grid"></i> <span>Pengumuman</span>
-                    </a>
-                </li>
-    
-                <li>
-                    <a href="/dosen/absensi">
-                    <i class="zmdi zmdi-grid"></i> <span>Absensi</span>
-                    </a>
-                </li>
-    
-                <li class="sidebar-header">SUB-NAVIGATION</li>
-                <li><a href="/users"><i class="zmdi zmdi-home text-danger"></i> <span>Kembali</span></a></li>
-    
-            </ul>
-        </div>
-        <!--End sidebar-wrapper-->
+<!doctype html>
+<html lang="en">
 
-        <!--Start topbar header-->
-        <header class="topbar-nav">
-        <nav class="navbar navbar-expand fixed-top">
-        <ul class="navbar-nav mr-auto align-items-center">
-            <li class="nav-item">
-            <a class="nav-link toggle-menu" href="javascript:void();">
-            <i class="icon-menu menu-icon"></i>
-            </a>
-            </li>
-            <li class="nav-item">
-            <form class="search-bar">
-                <input type="text" class="form-control" placeholder="Enter keywords">
-                <a href="javascript:void();"><i class="icon-magnifier"></i></a>
-            </form>
-            </li>
-        </ul>
-            
-        <ul class="navbar-nav align-items-center right-nav-link">
-            <li class="nav-item dropdown-lg">
-            <a class="nav-link dropdown-toggle dropdown-toggle-nocaret waves-effect" data-toggle="dropdown" href="javascript:void();">
-            <i class="fa fa-envelope-open-o"></i></a>
-            </li>
-            <li class="nav-item dropdown-lg">
-            <a class="nav-link dropdown-toggle dropdown-toggle-nocaret waves-effect" data-toggle="dropdown" href="javascript:void();">
-            <i class="fa fa-bell-o"></i></a>
-            </li>
-            <li class="nav-item language">
-            <a class="nav-link dropdown-toggle dropdown-toggle-nocaret waves-effect" data-toggle="dropdown" href="javascript:void();"><i class="fa fa-flag"></i></a>
-            <ul class="dropdown-menu dropdown-menu-right">
-                <li class="dropdown-item"> <i class="flag-icon flag-icon-gb mr-2"></i> English</li>
-                <li class="dropdown-item"> <i class="flag-icon flag-icon-fr mr-2"></i> French</li>
-                <li class="dropdown-item"> <i class="flag-icon flag-icon-cn mr-2"></i> Chinese</li>
-                <li class="dropdown-item"> <i class="flag-icon flag-icon-de mr-2"></i> German</li>
-                </ul>
-            </li>
-            <li class="nav-item">
-            <a class="nav-link dropdown-toggle dropdown-toggle-nocaret" data-toggle="dropdown" href="#">
-                <span class="user-profile"><img src="https://via.placeholder.com/110x110" class="img-circle" alt="user avatar"></span>
-            </a>
-            <ul class="dropdown-menu dropdown-menu-right">
-            <li class="dropdown-item user-details">
-                <a href="javaScript:void();">
-                <div class="media">
-                    <div class="avatar"><img class="align-self-start mr-3" src="https://via.placeholder.com/110x110" alt="user avatar"></div>
-                    <div class="media-body">
-                    <h6 class="mt-2 user-title">Sarajhon Mccoy</h6>
-                    <p class="user-subtitle">mccoy@example.com</p>
-                    </div>
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Education Digital Integrated Teaching Interface</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/themify-icons/0.1.0/themify-icons.min.css" integrity="sha384-VuY9u+UN3p0xgL5ms7Kp3Vz5mrnpGJwdW1N9+/Vg8L0Uhl4fhp89D/kcpw8BdC5Y" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/zmdi/2.2.0/css/zmdi.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-y5MI+VpVJfNsc1pOlZ8v5iWjKffmq0rZ5s7E0c8PrgOgjcWISntcoE+K0fx6Uq51OHNiTC+38o1dYsR/pI4L0A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="icon" href="/images/logo_editi-removebg-preview.png">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/etrain/css/bootstrap.min.css">
+    <!-- animate CSS -->
+    <link rel="stylesheet" href="/etrain/css/animate.css">
+    <!-- owl carousel CSS -->
+    <link rel="stylesheet" href="/etrain/css/owl.carousel.min.css">
+    <!-- themify CSS -->
+    <link rel="stylesheet" href="/etrain/css/themify-icons.css">
+    <!-- flaticon CSS -->
+    <link rel="stylesheet" href="/etrain/css/flaticon.css">
+    <!-- font awesome CSS -->
+    <link rel="stylesheet" href="/etrain/css/magnific-popup.css">
+    <!-- swiper CSS -->
+    <link rel="stylesheet" href="/etrain/css/slick.css">
+    <!-- style CSS -->
+    <link rel="stylesheet" href="/etrain/css/style.css">
+    
+</head>
+
+<body>
+    <!--::header part start::-->
+    <header class="main_menu home_menu">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-12">
+                    <nav class="navbar navbar-expand-lg navbar-light">
+                        <a class="navbar-brand" href="/etrain/index.html">
+                            <img src="/images/logo_editi-removebg-preview.png" style="width: 75px; height: 50px;" alt="logo">
+                        </a>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse"
+                            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                    
+                        <div class="collapse navbar-collapse main-menu-item justify-content-end" id="navbarSupportedContent">
+                            <ul class="navbar-nav align-items-center">
+                                <li class="nav-item active">
+                                    <a class="nav-link" href="#home">Home</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#about">About</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#feature">Feature</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#faq">FAQ</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#location">Location & Contact</a>
+                                </li>
+                                <li class="d-none d-lg-block">
+                                    <a class="btn_1" href="login">LOGIN</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>                    
                 </div>
-                </a>
-                </li>
-                <li class="dropdown-divider"></li>
-                <li class="dropdown-item"><i class="icon-envelope mr-2"></i> Inbox</li>
-                <li class="dropdown-divider"></li>
-                <li class="dropdown-item"><i class="icon-wallet mr-2"></i> Account</li>
-                <li class="dropdown-divider"></li>
-                <li class="dropdown-item"><i class="icon-settings mr-2"></i> Setting</li>
-                <li class="dropdown-divider"></li>
-                <li class="dropdown-item"><i class="icon-power mr-2"></i> Logout</li>
-            </ul>
-            </li>
-        </ul>
-        </nav>
-        </header>
-        <!--End topbar header-->
+            </div>
+        </div>
+    </header>
+    <!-- Header part end-->
 
-        <div class="clearfix"></div>
-            
-        <div class="content-wrapper">
-            <div class="container-fluid">
-
-        <!--Start Dashboard Content-->
-
-        <div class="card mt-3">
-            <div class="card-content">
-                <div class="row row-group m-0">
-                    <div class="col-12 col-lg-6 col-xl-12 border-light">
-                        <div class="card-body">
-                        <h4 class="text-white mb-0">Konsep Jaringan </h4>
-                        <h6 class="mb-0 text-white small-font">NIP:</h6><p>198701062022031002</p>
-                        <h6 class="mb-0 text-white small-font">Nama Dosen	:</h6> <p>Joko Prasetyo S.ST., M.Kom</p>
-                        <h6 class="mb-0 text-white small-font">Jadwal</h6>	<p>Senin (10:30 - 12:10) PSDKU-SM-K-101</p>
-                        <button type="submit" class="btn btn-primary">PRESENSI</button>
+    <!-- banner part start-->
+    <section class="banner_part" id="home">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 col-xl-6">
+                    <div class="banner_text">
+                        <div class="banner_text_iner">
+                            <h5>Empowering Education through Digital Innovation</h5>
+                            <h1>Creating the Best Learning Experience for You</h1>
+                            <p>Every student can live a structured and focused learning journey, ensuring every step towards academic success is carried out well</p>
+                            <!-- <a href="#" class="btn_1">View Course </a>
+                            <a href="#" class="btn_2">Get Started </a> -->
                         </div>
                     </div>
-                        
-                </div>
-            </div>
-            <div class="table-responsive mt-3"></div>
-                <table class="table table-hover "><h5>Catatan Presensi</h5>
-                <thead>
-                    <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Tanggal</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                    <th scope="row">1</th>
-                    <td>Selasa, 24 September 2024 - 13:09:48</td>
-                    </tr>
-                    <tr>
-                    <th scope="row">2</th>
-                    <td>Selasa, 17 September 2024 - 13:11:00</td>
-                    </tr>
-                    <tr>
-                    <th scope="row">3</th>
-                    <td>Selasa, 10 September 2024 - 13:24:08</td>
-                    </tr>
-                </tbody>
-                </table>
-        </div>  
-            
-        <!-- DataTales Example -->
-        <div class="card shadow mb-4">
-            <div class="card-header py-3">
-                <h6 class="m-0 font-weight-bold text-primary">Daftar Mahasiswa</h6>
-            </div>
-            <div class="card-body">
-                <div class="table-responsive">
-                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                        <thead>
-                            <tr>
-                                <th>NRP</th>
-                                <th>Nama</th>
-                                <th>Jenis Kelamin</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>3123522001</td>
-                                <td>Ibram Maulana Akhsanul Qasasi</td>
-                                <td>L</td>
-                            </tr>
-                            <tr>
-                                <td>3123522002</td>
-                                <td>Ahmad Maulana Afandi</td>
-                                <td>L</td>
-                            </tr>
-                            <tr>
-                                <td>3123522003</td>
-                                <td>Almas Daffa Avicena</td>
-                                <td>L</td>
-                            </tr>
-                            <tr>
-                                <td>3123522004</td>
-                                <td>Eka Intan Mauliyana</td>
-                                <td>P</td>
-                            </tr>
-                            <tr>
-                                <td>3123522005</td>
-                                <td>Vernanda Mulia Hamonangan Manurung</td>
-                                <td>L</td>
-                            </tr>
-                            <tr>
-                                <td>3123522006</td>
-                                <td>Muhammad Ifzal Faidurrahman</td>
-                                <td>L</td>
-                            </tr>
-                            <tr>
-                                <td>3123522007</td>
-                                <td>Dafa Ahmad Fahrisi</td>
-                                <td>L</td>
-                            </tr>
-                            <tr>
-                                <td>3123522008</td>
-                                <td>Ahmad Ari Fauzi</td>
-                                <td>L</td>
-                            </tr>
-                            <tr>
-                                <td>3123522009</td>
-                                <td>Rahmat M. Alfatih</td>
-                                <td>L</td>
-                            </tr>
-                            <tr>
-                                <td>31235220011</td>
-                                <td>Aqil Yoga Pramono</td>
-                                <td>L</td>
-                            </tr>
-                            <tr>
-                                <td>31235220012</td>
-                                <td>R.P. A. Lexy Mangku Saputra</td>
-                                <td>L</td>
-                            </tr>
-                            <tr>
-                                <td>31235220015</td>
-                                <td>A. Haidar Hafiz</td>
-                                <td>L</td>
-                            </tr>
-                            <tr>
-                                <td>31235220016</td>
-                                <td>Agiel Maula</td>
-                                <td>L</td>
-                            </tr>
-                            <tr>
-                                <td>31235220017</td>
-                                <td>Moh Iqbal Triwijaya</td>
-                                <td>L</td>
-                            </tr>
-                            <tr>
-                                <td>31235220018</td>
-                                <td>Rahadyan Danang Susetyo Pranawa</td>
-                                <td>L</td>
-                            </tr>
-                            <tr>
-                                <td>31235220019</td>
-                                <td>Tamisa Ulinda Marpaung</td>
-                                <td>P</td>
-                            </tr>
-                        </tbody>
-                    </table>
                 </div>
             </div>
         </div>
+    </section>
+    <!-- banner part start-->
 
+    <!-- learning part start-->
+    <section class="learning_part" id="about">
+        <div class="container">
+            <div class="row align-items-sm-center align-items-lg-stretch">
+                <div class="col-md-7 col-lg-7">
+                    <div class="learning_img">
+                        <img src="/images/dashboard.png" alt="">
+                    </div>
+                </div>
+                <div class="col-md-5 col-lg-5">
+                    <div class="learning_member_text">
+                        <h5>About us</h5>
+                        <h2>Welcome to E-DITI!</h2>
+                        <p> We are a digital education platform designed to enhance the learning experience for students and simplify the management of teaching activities for educators. 
+                            Our mission is to provide innovative tools that support the learning process, ensuring every student can learn in a way that suits their needs. We envision being a leading educational platform that connects teachers and students interactively and effectively. 
+                        </p>
+                        <ul>
+                            <li><span class="ti-pencil-alt"></span>Facilitate learning attendance</li>
+                            <li><span class="ti-ruler-pencil"></span>Make it easier for students to get learning materials and information</li>
+                        </ul>
+                        <!-- <a href="#" class="btn_1">Read More</a> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- learning part end-->
+
+    <!-- feature_part start-->
+    <section class="feature_part" id="feature">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="single_feature_text">
+                        <h2>Awesome Feature</h2>
+                        <p>Digital education platform that facilitates the management of teaching and learning activities</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6 col-xl-3">
+                    <div class="single_feature">
+                        <div class="single_feature_part">
+                            <span class="single_feature_icon"><i class="ti-layers"></i></span>
+                            <h4>Presence</h4>
+                            <p>The E-DITI attendance feature allows teachers to easily and quickly record student attendance online. 
+                                Teachers can monitor each student's presence in real-time, and attendance reports can be downloaded for administrative purposes.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-xl-3">
+                    <div class="single_feature">
+                        <div class="single_feature_part">
+                            <span class="single_feature_icon"><i class="ti-new-window"></i></span>
+                            <h4>Material</h4>
+                            <p>The E-DITI material feature provides easy access to various learning resources needed by students. 
+                                Teachers can upload documents, videos, and presentations that students can access anytime to support their learning process.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-xl-3">
+                    <div class="single_feature">
+                        <div class="single_feature_part">
+                            <span class="single_service_icon style_icon"><i class="ti-light-bulb"></i></span>
+                            <h4>Assignment</h4>
+                            <p>The E-DITI assignment feature simplifies the process for teachers to assign and manage tasks for students. 
+                                Teachers can set deadlines and receive task submissions online, while students can easily upload their work.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-xl-3">
+                    <div class="single_feature">
+                        <div class="single_feature_part">
+                            <span class="single_service_icon style_icon"><i class="ti-light-bulb"></i></span>
+                            <h4>Announcements</h4>
+                            <p>The E-DITI announcement feature allows teachers to quickly send important information to students. 
+                                Teachers can post announcements to keep students updated with the latest information.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>    
+    <!-- upcoming_event part start-->
+
+    <!-- member_counter counter start -->
+    <section class="member_counter">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-sm-6">
+                    <div class="single_member_counter">
+                        <span class="counter">302</span>
+                        <h4>All Lecturers</h4>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6">
+                    <div class="single_member_counter">
+                        <span class="counter">1239</span>
+                        <h4> All Students</h4>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6">
+                    <div class="single_member_counter">
+                        <span class="counter">220</span>
+                        <h4>Online Students</h4>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6">
+                    <div class="single_member_counter">
+                        <span class="counter">1019</span>
+                        <h4>Ofline Students</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- member_counter counter end -->
+
+    <!--::review_part start::-->
+    <!-- <section class="special_cource padding_top">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-xl-5">
+                    <div class="section_tittle text-center">
+                        <p>popular courses</p>
+                        <h2>Special Courses</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6 col-lg-4">
+                    <div class="single_special_cource">
+                        <img src="/etrain/img/special_cource_1.png" class="special_img" alt="">
+                        <div class="special_cource_text">
+                            <a href="course-details.html" class="btn_4">Web Development</a>
+                            <h4>$130.00</h4>
+                            <a href="course-details.html"><h3>Web Development</h3></a>
+                            <p>Which whose darkness saying were life unto fish wherein all fish of together called</p>
+                            <div class="author_info">
+                                <div class="author_img">
+                                    <img src="/etrain/img/author/author_1.png" alt="">
+                                    <div class="author_info_text">
+                                        <p>Conduct by:</p>
+                                        <h5><a href="#">James Well</a></h5>
+                                    </div>
+                                </div>
+                                <div class="author_rating">
+                                    <div class="rating">
+                                        <a href="#"><img src="/etrain/img/icon/color_star.svg" alt=""></a>
+                                        <a href="#"><img src="/etrain/img/icon/color_star.svg" alt=""></a>
+                                        <a href="#"><img src="/etrain/img/icon/color_star.svg" alt=""></a>
+                                        <a href="#"><img src="/etrain/img/icon/color_star.svg" alt=""></a>
+                                        <a href="#"><img src="/etrain/img/icon/star.svg" alt=""></a>
+                                    </div>
+                                    <p>3.8 Ratings</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-4">
+                    <div class="single_special_cource">
+                        <img src="/etrain/img/special_cource_2.png" class="special_img" alt="">
+                        <div class="special_cource_text">
+                            <a href="course-details.html" class="btn_4">design</a>
+                            <h4>$160.00</h4>
+                            <a href="course-details.html"> <h3>Web UX/UI Design </h3></a>
+                            <p>Which whose darkness saying were life unto fish wherein all fish of together called</p>
+                            <div class="author_info">
+                                <div class="author_img">
+                                    <img src="/etrain/img/author/author_2.png" alt="">
+                                    <div class="author_info_text">
+                                        <p>Conduct by:</p>
+                                        <h5><a href="#">James Well</a></h5>
+                                    </div>
+                                </div>
+                                <div class="author_rating">
+                                    <div class="rating">
+                                        <a href="#"><img src="/etrain/img/icon/color_star.svg" alt=""></a>
+                                        <a href="#"><img src="/etrain/img/icon/color_star.svg" alt=""></a>
+                                        <a href="#"><img src="/etrain/img/icon/color_star.svg" alt=""></a>
+                                        <a href="#"><img src="/etrain/img/icon/color_star.svg" alt=""></a>
+                                        <a href="#"><img src="/etrain/img/icon/star.svg" alt=""></a>
+                                    </div>
+                                    <p>3.8 Ratings</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-4">
+                    <div class="single_special_cource">
+                        <img src="/etrain/img/special_cource_3.png" class="special_img" alt="">
+                        <div class="special_cource_text">
+                            <a href="course-details.html" class="btn_4">Wordpress</a>
+                            <h4>$140.00</h4>
+                            <a href="course-details.html">  <h3>Wordpress Development</h3> </a> 
+                            <p>Which whose darkness saying were life unto fish wherein all fish of together called</p>
+                            <div class="author_info">
+                                <div class="author_img">
+                                    <img src="/etrain/img/author/author_3.png" alt="">
+                                    <div class="author_info_text">
+                                        <p>Conduct by:</p>
+                                        <h5><a href="#">James Well</a></h5>
+                                    </div>
+                                </div>
+                                <div class="author_rating">
+                                    <div class="rating">
+                                        <a href="#"><img src="/etrain/img/icon/color_star.svg" alt=""></a>
+                                        <a href="#"><img src="/etrain/img/icon/color_star.svg" alt=""></a>
+                                        <a href="#"><img src="/etrain/img/icon/color_star.svg" alt=""></a>
+                                        <a href="#"><img src="/etrain/img/icon/color_star.svg" alt=""></a>
+                                        <a href="#"><img src="/etrain/img/icon/star.svg" alt=""></a>
+                                    </div>
+                                    <p>3.8 Ratings</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> -->
+    <!--::blog_part end::-->
+
+    <!-- learning part start-->
+    <section class="advance_feature learning_part" id="reason">
+        <div class="container">
+            <div class="row align-items-sm-center align-items-xl-stretch">
+                <div class="col-md-6 col-lg-6">
+                    <div class="learning_member_text">
+                        <h5>Why You Should Choose Us</h5>
+                        <h2>Specially Designed Learning System</h2>
+                        <p>E-DITI is an ideal choice for your educational needs because the platform offers a comprehensive range of features, including real-time attendance tracking, easy access to learning materials, and efficient task management, all designed to enhance the learning process. 
+                            Additionally, E-DITI provides responsive customer support and regular updates based on user feedback, ensuring that the platform remains relevant and effective.</p>
+                        <div class="row">
+                            <div class="col-sm-6 col-md-12 col-lg-6">
+                                <div class="learning_member_text_iner">
+                                    <span class="ti-pencil-alt"></span>
+                                    <h4>Learn Anywhere</h4>
+                                    <p>Learning can be done anywhere and anytime</p>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-md-12 col-lg-6">
+                                <div class="learning_member_text_iner">
+                                    <span class="ti-user"></span>
+                                    <h4>Expert Teacher</h4>
+                                    <p>Experienced teachers supported by skilled technicians</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6">
+                    <div class="learning_img">
+                        <img src="/images/presen.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- learning part end-->
+
+    <h2 id="title_faq" style="text-align: center;" >Frequently Asked Questions</h2>
+    <div class="faq-container" id="faq">
+        <div class="faq-category">
+            <h3>Mahasiswa</h3>
+            <div class="faq-item" onclick="toggleAnswer(this)">
+                <h5>Apa yang harus dilakukan jika tidak bisa login ke E-DITI karena lupa email dan password?</h5>
+                <div class="faq-answer">Silahkan menghubungi kontak kami yang sudah tertera.</div>
+            </div>
+            <div class="faq-item" onclick="toggleAnswer(this)">
+                <h5>Bagaimana jika kuliah saya di semester ini tidak muncul?</h5>
+                <div class="faq-answer">Silahkan cek kembali apakah sudah mengambil matakuliah, jika masih ada masalah hubungi kami</div>
+            </div>
+            <div class="faq-item" onclick="toggleAnswer(this)">
+                <h5>Bagaimana jika saya tidak dapat melakukan klik pada tombol Presensi saat akan mengikuti perkuliahan online?</h5>
+                <div class="faq-answer">Periksa koneksi internet Anda atau hubungi support.</div>
+            </div>
+            <div class="faq-item" onclick="toggleAnswer(this)">
+                <h5>Data rekap presensi yang valid apakah yang ada di E-DITI?</h5>
+                <div class="faq-answer">Rekap presensi sudah valid yang ada di sistem, silahkan cek kembali.</div>
+            </div>
+        </div>
+
+        <div class="faq-category">
+            <h3>Dosen</h3>
+            <div class="faq-item" onclick="toggleAnswer(this)">
+                <h5>Bagaimana cara melihat rekap absensi?</h5>
+                <div class="faq-answer">Anda dapat melihatnya di halaman detail</div>
+            </div>
+            <div class="faq-item" onclick="toggleAnswer(this)">
+                <h5>Apakah dosen bisa membuka presensi di kuliah yang berbeda dalam waktu bersamaan?</h5>
+                <div class="faq-answer">Tidak, sistem hanya memperbolehkan satu presensi dibuka pada satu waktu.</div>
+            </div>
+            <div class="faq-item" onclick="toggleAnswer(this)">
+                <h5>Data rekap presensi yang valid apakah yang ada di E-DITI?</h5>
+                <div class="faq-answer">Rekap presensi sudah valid yang ada di sistem, silahkan cek kembali.</div>
+            </div>
+        </div>
     </div>
-    <!-- /.container-fluid -->
 
-</div>
-<!-- End of Main Content -->
- 
+    <script>
+        function toggleAnswer(element) {
+            const answer = element.querySelector('.faq-answer');
+            answer.style.display = answer.style.display === "block" ? "none" : "block";
+        }
+    </script>
 
-<%- include('../partials/__foot') %>
-	
+    <!--::review_part start::-->
+    <!-- <section class="testimonial_part" id="testimoni">
+        <div class="container-fluid">
+            <div class="row justify-content-center">
+                <div class="col-xl-5">
+                    <div class="section_tittle text-center">
+                        <p>tesimonials</p>
+                        <h2>Happy Students</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="textimonial_iner owl-carousel">
+                        <div class="testimonial_slider">
+                            <div class="row">
+                                <div class="col-lg-8 col-xl-4 col-sm-8 align-self-center">
+                                    <div class="testimonial_slider_text">
+                                        <p>E-DITI has transformed my learning experience! The platform is user-friendly, and the courses are informative. 
+                                            I love the flexibility it offers.</p>
+                                        <h4>Danang Susetyo Pranawa</h4>
+                                        <h5> Software Engineer</h5>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-xl-2 col-sm-4">
+                                    <div class="testimonial_slider_img">
+                                        <img src="/etrain/img/testimonial_img_1.png" alt="#">
+                                    </div>
+                                </div>
+                                <div class="col-xl-4 d-none d-xl-block">
+                                    <div class="testimonial_slider_text">
+                                        <p>The trainers at E-DITI are incredibly knowledgeable and supportive. 
+                                            I’ve gained so much from their courses!</p>
+                                        <h4>Ahmad Ari Fauzi</h4>
+                                        <h5> Backend Developer</h5>
+                                    </div>
+                                </div>
+                                <div class="col-xl-2 d-none d-xl-block">
+                                    <div class="testimonial_slider_img">
+                                        <img src="/etrain/img/testimonial_img_1.png" alt="#">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testimonial_slider">
+                            <div class="row">
+                                <div class="col-lg-8 col-xl-4 col-sm-8 align-self-center">
+                                    <div class="testimonial_slider_text">
+                                        <p>The trainers at E-DITI are incredibly knowledgeable and supportive. 
+                                            I’ve gained so much from their courses!</p>
+                                        <h4>Ahmad Ari Fauzi</h4>
+                                        <h5> Backend Developer</h5>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-xl-2 col-sm-4">
+                                    <div class="testimonial_slider_img">
+                                        <img src="/etrain/img/testimonial_img_2.png" alt="#">
+                                    </div>
+                                </div>
+                                <div class="col-xl-4 d-none d-xl-block">
+                                    <div class="testimonial_slider_text">
+                                        <p>I appreciate the real-time feedback from instructors. 
+                                            It helps me improve my skills effectively. Highly recommend E-DITI!</p>
+                                        <h4>Mohammad Ifzal Faidurrahman</h4>
+                                        <h5> Web Developer</h5>
+                                    </div>
+                                </div>
+                                <div class="col-xl-2 d-none d-xl-block">
+                                    <div class="testimonial_slider_img">
+                                        <img src="/etrain/img/testimonial_img_1.png" alt="#">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testimonial_slider">
+                            <div class="row">
+                                <div class="col-lg-8 col-xl-4 col-sm-8 align-self-center">
+                                    <div class="testimonial_slider_text">
+                                        <p>I appreciate the real-time feedback from instructors. 
+                                            It helps me improve my skills effectively. Highly recommend E-DITI!</p>
+                                        <h4>Mohammad Ifzal Faidurrahman</h4>
+                                        <h5> Web Developer</h5>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-xl-2 col-sm-4">
+                                    <div class="testimonial_slider_img">
+                                        <img src="/etrain/img/testimonial_img_3.png" alt="#">
+                                    </div>
+                                </div>
+                                <div class="col-xl-4 d-none d-xl-block">
+                                    <div class="testimonial_slider_text">
+                                        <p>E-DITI has transformed my learning experience! The platform is user-friendly, and the courses are informative. 
+                                            I love the flexibility it offers.</p>
+                                        <h4>Danang Susetyo Pranawa</h4>
+                                        <h5> Software Engineer</h5>
+                                    </div>
+                                </div>
+                                <div class="col-xl-2 d-none d-xl-block">
+                                    <div class="testimonial_slider_img">
+                                        <img src="/etrain/img/testimonial_img_1.png" alt="#">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section> -->
+    <!--::blog_part end::-->
+
+    <!--::blog_part start::-->
+    <!-- <section class="blog_part section_padding" id="blog">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-xl-5">
+                    <div class="section_tittle text-center">
+                        <p>Our Blog</p>
+                        <h2>Students Blog</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6 col-lg-4 col-xl-4">
+                    <div class="single-home-blog">
+                        <div class="card">
+                            <img src="/etrain/img/blog/blog_1.png" class="card-img-top" alt="blog">
+                            <div class="card-body">
+                                <h5 class="card-title">Dry beginning sea over tree</h5>
+                                <p>Which whose darkness saying were life unto fish wherein all fish of together called</p>
+                                <ul>
+                                    <li> <span class="ti-comments"></span>2 Comments</li>
+                                    <li> <span class="ti-heart"></span>2k Like</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-4 col-xl-4">
+                    <div class="single-home-blog">
+                        <div class="card">
+                            <img src="/etrain/img/blog/blog_2.png" class="card-img-top" alt="blog">
+                            <div class="card-body">
+                                <h5 class="card-title">All beginning air two likeness</h5>
+                                <p>Which whose darkness saying were life unto fish wherein all fish of together called</p>
+                                <ul>
+                                    <li> <span class="ti-comments"></span>2 Comments</li>
+                                    <li> <span class="ti-heart"></span>2k Like</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-4 col-xl-4">
+                    <div class="single-home-blog">
+                        <div class="card">
+                            <img src="/etrain/img/blog/blog_3.png" class="card-img-top" alt="blog">
+                            <div class="card-body">
+                                <h5 class="card-title">Form day seasons sea hand</h5>
+                                <p>Which whose darkness saying were life unto fish wherein all fish of together called</p>
+                                <ul>
+                                    <li> <span class="ti-comments"></span>2 Comments</li>
+                                    <li> <span class="ti-heart"></span>2k Like</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> -->
+    <!--::blog_part end::-->
+    
+    <div class="our-map" id="location">
+        <div class="title-map">
+            <h1 style="text-align: center;">Our Location & Contact</h1>
+        </div>
+        <div id="map-container">
+            <div id="map">
+                <div class="gmap">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d990.0178889524008!2d113.86822397082433!3d-7.000855878673071!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd9e5f3d289713d%3A0xc2cbb76cdab30354!2sPoliteknik%20Elektronika%20Negeri%20Surabaya%20(PENS)%20PSDKU%20Sumenep!5e0!3m2!1sid!2sid!4v1728658546553!5m2!1sid!2sid" 
+                        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+                <div class="contact">
+                    <h3>Politeknik Elektronika Negeri Surabaya</h3>
+                    <h5>PSDKU Sumenep</h5>
+                    <p>Kampus, Jalan KH.Agus Salim, Pamolokan, Kec. Kota Sumenep, Kab. Sumenep</p>
+                    <p>Sumenep 69417</p>
+                </div> 
+            </div>
+        </div>
+    </div>
+
+
+    <!-- footer part start-->
+    <footer class="footer-area" id="footer">
+        <div class="container">
+            <div class="row justify-content-between">
+                <div class="col-sm-6 col-md-4 col-xl-3">
+                    <div class="single-footer-widget footer_1">
+                        <a href="index.html"> <img src="/images/logo_editi-removebg-preview.png" style="width: 75px; height: 50px;" alt=""> </a>
+                        <p class="text_footer">Thank you for visiting our website. We hope you are satisfied with all our services. </p>
+                        <p class="text_footer">See you again </p>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-4 col-xl-4">
+                        <div class="single-footer-widget footer_2">
+                            <h4>Contact us</h4>
+                        <div class="contact_info">
+                            <p><span> Phone :</span> +2 36 265 (8060)</p>
+                            <p><span> Email : </span>humas@pens.ac.id </p>
+                        </div>
+                        <!-- <h4 class="text_footer">Newsletter</h4>
+                        <p class="text_footer">Stay updated with our latest trends Seed heaven so said place winged over given forth fruit.
+                        </p>
+                        <form action="#">
+                            <div class="form-group">
+                                <div class="input-group mb-3">
+                                    <input type="text" class="form-control" placeholder='Enter email address'
+                                        onfocus="this.placeholder = ''"
+                                        onblur="this.placeholder = 'Enter email address'">
+                                    <div class="input-group-append">
+                                        <button class="btn btn_1" type="button"><i class="ti-angle-right"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                        <div class="social_icon">
+                            <a href="#"> <i class="ti-facebook"></i> </a>
+                            <a href="#"> <i class="ti-twitter-alt"></i> </a>
+                            <a href="#"> <i class="ti-instagram"></i> </a>
+                            <a href="#"> <i class="ti-skype"></i> </a>
+                        </div>
+                    </div> -->
+                </div>
+                <!-- <div class="single-footer-widget footer_2">
+                    <h4>Contact us</h4>
+                    <div class="contact_info">
+                        <p><span> Address :</span> Hath of it fly signs bear be one blessed after </p>
+                        <p><span> Phone :</span> +2 36 265 (8060)</p>
+                        <p><span> Email : </span>info@colorlib.com </p>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="copyright_part_text text-center">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <p class="footer-text m-0"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This is made with <i class="ti-heart" aria-hidden="true"></i> in Madura, Sumenep</a>
+<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- footer part end-->
+
+    <!-- jquery plugins here-->
+    <!-- jquery -->
+    <script src="/etrain/js/jquery-1.12.1.min.js"></script>
+    <!-- popper js -->
+    <script src="/etrain/js/popper.min.js"></script>
+    <!-- bootstrap js -->
+    <script src="/etrain/js/bootstrap.min.js"></script>
+    <!-- easing js -->
+    <script src="/etrain/js/jquery.magnific-popup.js"></script>
+    <!-- swiper js -->
+    <script src="/etrain/js/swiper.min.js"></script>
+    <!-- swiper js -->
+    <script src="/etrain/js/masonry.pkgd.js"></script>
+    <!-- particles js -->
+    <script src="/etrain/js/owl.carousel.min.js"></script>
+    <script src="/etrain/js/jquery.nice-select.min.js"></script>
+    <!-- swiper js -->
+    <script src="/etrain/js/slick.min.js"></script>
+    <script src="/etrain/js/jquery.counterup.min.js"></script>
+    <script src="/etrain/js/waypoints.min.js"></script>
+    <!-- custom js -->
+    <script src="/etrain/js/custom.js"></script>
+</body>
+
+</html>

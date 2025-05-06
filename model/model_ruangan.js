@@ -38,7 +38,7 @@ class model_ruangan{
 
     static async Update(id ,Data){
         return new Promise((resolve, reject) => {
-            connection.query("update ruangan set ? where id_ruangan = ", + id, Data,(err, rows)=>{
+            connection.query("update ruangan set ? where id_ruangan = ?", [Data, id],(err, rows)=>{
                 if(err){
                     reject(err)
                 }else{
@@ -50,7 +50,7 @@ class model_ruangan{
 
     static async Delete(id){
         return new Promise((resolve, reject) => {
-            connection.query("delete from ruangan where id_ruangan = ", + id,(err, rows)=>{
+            connection.query("delete from ruangan where id_ruangan = ?", [id],(err, rows)=>{
                 if(err){
                     reject(err)
                 }else{

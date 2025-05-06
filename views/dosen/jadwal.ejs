@@ -5,7 +5,7 @@
     <div id="sidebar-wrapper" data-simplebar="" data-simplebar-auto-hide="true">
         <div class="brand-logo">
             <a href="/users">
-                <img src="/images/Logo_PENS.png" class="logo-icon img-fluid" alt="logo icon" style="width: 50px; height: 50;">
+                <img src="/images/logo_editi-removebg-preview.png" class="logo-icon img-fluid" alt="logo icon" style="width: 50px; height: 50;">
 
             <h5 class="logo-text">E-DITI</h5>
             </a>
@@ -13,19 +13,19 @@
         <ul class="sidebar-menu do-nicescrol">
             <li class="sidebar-header">MAIN NAVIGATION</li>
             <li>
-                <a href="/users">
+                <a href="/dosen/<%= id_dosen %>">
                 <i class="zmdi zmdi-view-dashboard"></i> <span>Dashboard</span>
                 </a>
             </li>
 
             <li>
-                <a href="/dosen/matakuliah">
+                <a href="/dosen/<%= id_dosen %>/matakuliah">
                     <i class="zmdi zmdi-library"></i><span>Matakuliah</span>
                 </a>
             </li>
 
             <li>
-                <a href="/dosen/jadwal">
+                <a href="/dosen/<%= id_dosen %>/jadwal">
                     <i class="fa-regular fa-calendar"></i> <span>Jadwal</span>
                 </a>
             </li>
@@ -72,16 +72,16 @@
                 </li> -->
                 <li class="nav-item">
                     <a class="nav-link dropdown-toggle dropdown-toggle-nocaret" data-toggle="dropdown" href="#">
-                        <span class="user-profile"><img src="/images/Logo_PENS.png" class="img-circle" alt="user avatar"></span>
+                        <span class="user-profile"><img src="/images/logo_editi-removebg-preview.png" class="img-circle" alt="user avatar"></span>
                     </a>
                     <ul class="dropdown-menu dropdown-menu-right">
                         <li class="dropdown-item user-details">
                             <a href="javaScript:void();">
                                 <div class="media">
-                                    <div class="avatar"><img class="align-self-start mr-3" src="/images/Logo_PENS.png" alt="user avatar"></div>
+                                    <div class="avatar"><img class="align-self-start mr-3" src="/images/logo_editi-removebg-preview.png" alt="user avatar"></div>
                                     <div class="media-body">
-                                    <h6 class="mt-2 user-title">Sarajhon Mccoy</h6>
-                                    <p class="user-subtitle">mccoy@example.com</p>
+                                    <h6 class="mt-2 user-title"><%= dataUsers[0].username %></h6>
+                                    <p class="user-subtitle"><%= dataUsers[0].email %></p>
                                     </div>
                                 </div>
                             </a>
@@ -121,43 +121,109 @@
                             </div>
                         </div>
                         <div class="table-responsive">
-                            <table class="table align-items-center table-flush table-borderless">
-                                <thead> 
+                            <table class="table align-items-center table-flush table-borderless table-striped">
+                                <thead>
                                     <tr>
-                                        <th>Matakuliah</th>
-                                        <th>Hari/Waktu</th>
-                                        <th>Ruangan</th>
+                                        <th>Senin</th>
+                                        <th>Selasa</th>
+                                        <th>Rabu</th>
+                                        <th>Kamis</th>
+                                        <th>Jumat</th>
+                                        <th>Sabtu</th>
+                                        <th>Minggu</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td>Algoritma dan Pemrograman</td>
-                                        <td>Senin, 08:00-10:00</td>
-                                        <td>Lab Komputer 1</td>
+                                        <td>
+                                            <% getJoin.forEach((item) => { %>
+                                                <% if(item.jadwal_kuliah.toLowerCase() === 'senin') { %>
+                                                    <div class="schedule-item">
+                                                        <strong>Matakuliah:</strong> <br><%= item.nama_mata_kuliah %><br>
+                                                        <strong>Kelas:</strong> <%= item.kelas %><br>
+                                                        <strong>Waktu:</strong><%= item.start_absensi %> - <%= item.end_absensi %>
+                                                        <br>
+                                                    </div>
+                                                <% } %>
+                                            <% }); %>
+                                        </td>
+                                        <td>
+                                            <% getJoin.forEach((item) => { %>
+                                                <% if(item.jadwal_kuliah.toLowerCase() === 'selasa') { %>
+                                                    <div class="schedule-item">
+                                                        <strong>Matakuliah:</strong> <br><%= item.nama_mata_kuliah %><br>
+                                                        <strong>Kelas:</strong> <%= item.kelas %><br>
+                                                        <strong>Waktu:</strong><%= item.start_absensi %> - <%= item.end_absensi %>
+                                                        <br>
+                                                    </div>
+                                                <% } %>
+                                            <% }); %>
+                                        </td>
+                                        <td>
+                                            <% getJoin.forEach((item) => { %>
+                                                <% if(item.jadwal_kuliah.toLowerCase() === 'rabu') { %>
+                                                    <div class="schedule-item">
+                                                        <strong>Matakuliah:</strong> <br><%= item.nama_mata_kuliah %><br>
+                                                        <strong>Kelas:</strong> <%= item.kelas %><br>
+                                                        <strong>Waktu:</strong><%= item.start_absensi %> - <%= item.end_absensi %>
+                                                        <br>
+                                                    </div>
+                                                <% } %>
+                                            <% }); %>
+                                        </td>
+                                        <td>
+                                            <% getJoin.forEach((item) => { %>
+                                                <% if(item.jadwal_kuliah.toLowerCase() === 'kamis') { %>
+                                                    <div class="schedule-item">
+                                                        <strong>Matakuliah:</strong> <br><%= item.nama_mata_kuliah %><br>
+                                                        <strong>Kelas:</strong> <%= item.kelas %><br>
+                                                        <strong>Waktu:</strong><%= item.start_absensi %> - <%= item.end_absensi %>
+                                                        <br>
+                                                    </div>
+                                                <% } %>
+                                            <% }); %>
+                                        </td>
+                                        <td>
+                                            <% getJoin.forEach((item) => { %>
+                                                <% if(item.jadwal_kuliah.toLowerCase() === 'jumat') { %>
+                                                    <div class="schedule-item">
+                                                        <strong>Matakuliah:</strong> <br><%= item.nama_mata_kuliah %><br>
+                                                        <strong>Kelas:</strong> <%= item.kelas %><br>
+                                                        <strong>Waktu:</strong><%= item.start_absensi %> - <%= item.end_absensi %>
+                                                        <br>
+                                                    </div>
+                                                <% } %>
+                                            <% }); %>
+                                        </td>
+                                        <td>
+                                            <% getJoin.forEach((item) => { %>
+                                                <% if(item.jadwal_kuliah.toLowerCase() === 'sabtu') { %>
+                                                    <div class="schedule-item">
+                                                        <strong>Matakuliah:</strong> <br><%= item.nama_mata_kuliah %><br>
+                                                        <strong>Kelas:</strong> <%= item.kelas %><br>
+                                                        <strong>Waktu:</strong><%= item.start_absensi %> - <%= item.end_absensi %>
+                                                        <br>
+                                                    </div>
+                                                <% } %>
+                                            <% }); %>
+                                        </td>
+                                        <td>
+                                            <% getJoin.forEach((item) => { %>
+                                                <% if(item.jadwal_kuliah.toLowerCase() === 'minggu') { %>
+                                                    <div class="schedule-item">
+                                                        <strong>Matakuliah:</strong> <br><%= item.nama_mata_kuliah %><br>
+                                                        <strong>Kelas:</strong> <%= item.kelas %><br>
+                                                        <strong>Waktu:</strong><%= item.start_absensi %> - <%= item.end_absensi %>
+                                                        <br>
+                                                    </div>
+                                                <% } %>
+                                            <% }); %>
+                                        </td>
                                     </tr>
-                                    <tr>
-                                        <td>Sistem Basis Data</td>
-                                        <td>Rabu, 10:00-12:00</td>
-                                        <td>Ruang 203</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Struktur Data</td>
-                                        <td>Kamis, 13:00-15:00</td>
-                                        <td>Lab Komputer 2</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Jaringan Komputer</td>
-                                        <td>Selasa, 09:00-11:00</td>
-                                        <td>Ruang 305</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Metodologi Agile</td>
-                                        <td>Jumat, 08:00-10:00</td>
-                                        <td>Ruang 102</td>
-                                    </tr>
-                                </tbody>                                    
+                                </tbody>
                             </table>
                         </div>
+                        
                     </div>
                 </div>
             </div><!--End Row-->
